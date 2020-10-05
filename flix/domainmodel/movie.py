@@ -1,6 +1,6 @@
-from domainmodel.genre import Genre
-from domainmodel.actor import Actor
-from domainmodel.director import Director
+from flix.domainmodel.genre import Genre
+from flix.domainmodel.actor import Actor
+from flix.domainmodel.director import Director
 from typing import List
 
 

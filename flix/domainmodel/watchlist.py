@@ -1,4 +1,4 @@
-from domainmodel.movie import Movie
+from flix.domainmodel.movie import Movie
 from typing import List
 
 

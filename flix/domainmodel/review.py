@@ -1,7 +1,7 @@
 from datetime import datetime
 import time
 
-from domainmodel.movie import Movie
+from flix.domainmodel.movie import Movie
 
 
 class Review:

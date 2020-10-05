@@ -1,8 +1,8 @@
 import csv
-from domainmodel.movie import Movie
-from domainmodel.actor import Actor
-from domainmodel.genre import Genre
-from domainmodel.director import Director
+from flix.domainmodel.movie import Movie
+from flix.domainmodel.actor import Actor
+from flix.domainmodel.genre import Genre
+from flix.domainmodel.director import Director
 from typing import List
 
 

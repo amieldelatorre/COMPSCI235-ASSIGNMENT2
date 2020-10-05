@@ -4,8 +4,8 @@ import os
 
 from flask import Flask
 
-import covid.adapters.repository as repo
-from covid.adapters.memory_repository import MemoryRepository, populate
+import flix.adapters.repository as repo
+from flix.adapters.memory_repository import MemoryRepository, populate
 
 
 def create_app(test_config=None):
@@ -33,13 +33,7 @@ def create_app(test_config=None):
         from .home import home
         app.register_blueprint(home.home_blueprint)
 
-        from .news import news
-        app.register_blueprint(news.news_blueprint)
-
         from .authentication import authentication
         app.register_blueprint(authentication.authentication_blueprint)
-
-        from .utilities import utilities
-        app.register_blueprint(utilities.utilities_blueprint)
 
     return app
