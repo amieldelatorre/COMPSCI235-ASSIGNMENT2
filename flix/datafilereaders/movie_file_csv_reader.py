@@ -58,7 +58,6 @@ class MovieFileCSVReader:
                     self.__dataset_of_movies.append(movie)
                 if movie_director not in self.__dataset_of_directors:
                     self.__dataset_of_directors.append(movie_director)
-
                 index += 1
 
     @property

@@ -2,27 +2,21 @@ from typing import Iterable
 import random
 
 from flix.adapters.repository import AbstractRepository
+from flix.domainmodel.movie import Movie
 
 
-def get_tag_names(repo: AbstractRepository):
-    tags = repo.get_tags()
-    tag_names = [tag.tag_name for tag in tags]
+def get_random_movies(quantity, repo: AbstractRepository):
+    movies_count = repo.get_number_of_movies()
 
-    return tag_names
+    if quantity >= movies_count:
+        # Reduce the quantity of indexes to generate if the repository has an insufficient number of movies.
+        quantity = movies_count - 1
 
+    # Pick distinct and random movies.
+    random_index = random.sample(range(1, movies_count), quantity)
+    movies = repo.get_movies_by_index(random_index)
 
-def get_random_articles(quantity, repo: AbstractRepository):
-    article_count = repo.get_number_of_articles()
-
-    if quantity >= article_count:
-        # Reduce the quantity of ids to generate if the repository has an insufficient number of articles.
-        quantity = article_count - 1
-
-    # Pick distinct and random articles.
-    random_ids = random.sample(range(1, article_count), quantity)
-    articles = repo.get_articles_by_id(random_ids)
-
-    return articles_to_dict(articles)
+    return movies
 
 
 # ============================================

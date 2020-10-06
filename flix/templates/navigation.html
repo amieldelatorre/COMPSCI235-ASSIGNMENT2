@@ -1,6 +1,4 @@
 <nav id="nav">
-  <img id="logo" src="{{ url_for('static', filename='covid-19.png') }}" />
-
   <h2 id="nav-header">
     {% if 'username' in session %} Hello, {{ session['username'] }} {%
     endif %}

@@ -20,6 +20,15 @@ h1 {
     font-weight: bold;
 }
 
+h2 {
+    text-align: center;
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
 img {
   display: block;
   width: 500px;
@@ -85,15 +94,21 @@ img {
     word-break: break-all;
 }
 
+.movie {
+    margin: 50px;
+}
+
 #body {
   min-height: 100%;
   margin-bottom: -60px;
   font-size: medium;
+  background-color: black;
 }
 
 #header {
   padding: 20px;
-  background: #fff;
+  color: white;
+  background: black;
   border-bottom: 1px solid #e0e4e8;
   font-size: 64px;
   font-weight: bold;
@@ -110,14 +125,16 @@ img {
 #container {
   display: flex;
   flex-direction: row;
+  margin-top: -20px;
 }
 
 #nav {
   width: 200px;
   height: 100%;
-  background: #7532cd;
+  background: black;
   padding: 30px 0px;
   position: fixed;
+  border-right: 1px solid #fff;
 }
 
 #nav-header {
@@ -147,11 +164,11 @@ img {
 }
 
 #main {
-  margin: 20px;
   color: #717171;
   line-height: 25px;
   padding: 10px;
-  width: 66.666667%;
+  width: 100%;
+  background-color: black;
 }
 
 #logo {
@@ -224,4 +241,8 @@ input[type='submit']:hover {
     vertical-align: -0.5em;
     fill: currentColor;
     overflow: hidden;
+}
+
+p {
+    color: white;
 }
