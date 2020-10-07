@@ -10,7 +10,6 @@
     <button type="submit" class="search-btn">Search</button>
   </form>
 
-  {% if movies|length == 4 %}
 
   {% if first_movie_url is not none %}
   <button class="btn-prev" onclick="location.href='{{first_movie_url}}'">First</button>
@@ -26,8 +25,6 @@
 
   {% if last_movie_url is not none %}
   <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
-  {% endif %}
-
   {% endif %}
 
   {% for key in movies.keys()%}
@@ -38,8 +35,6 @@
     </div>
 {% endfor %}
 
-    {% if movies|length == 4 %}
-
   {% if first_movie_url is not none %}
   <button class="btn-prev" onclick="location.href='{{first_movie_url}}'">First</button>
   {% endif %}
@@ -54,8 +49,6 @@
 
   {% if last_movie_url is not none %}
   <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
-  {% endif %}
-
   {% endif %}
 
 </main>

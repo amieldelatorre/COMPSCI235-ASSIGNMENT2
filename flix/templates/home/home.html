@@ -2,7 +2,7 @@
 <main id="main">
   <h3 style="text-align:center">Welcome to CS235Flix, where you can watch movies as you want</h3>
   <p style="text-align: center">This page will display random movies that you can pick from</p>
-<a href="" style="color:white">Click here to refresh list</a>
+<button class="btn-general" onclick="location.href='{{refresh_url}}'">Refresh page to change random movies</button>
 {% for key in movies.keys()%}
   <div class="movie">
     <img alt="{{key.title}}" src="{{movies[key]}}">
