@@ -1,0 +1,63 @@
+{% extends 'layout.html' %} {% block content %}
+<main id="main">
+  <h3 style="text-align:center">Welcome to CS235Flix, where you can watch movies as you want</h3>
+  <h2 style="margin-top:20px">Browse by Genre</h2>
+  <form method="GET" action="{{search_url}}">
+  <h3 style="margin-top:50px">*Please search for a movie by movie name, actor name, director name, genre, separated by commas, uppercase or lowercase*</h3>
+  <div class="form-field">
+    <input id="search" name="search" required type="text" placeholder="Angelina Jolie, Action">
+  </div>
+    <button type="submit" class="search-btn">Search</button>
+  </form>
+
+  {% if movies|length == 4 %}
+
+  {% if first_movie_url is not none %}
+  <button class="btn-prev" onclick="location.href='{{first_movie_url}}'">First</button>
+  {% endif %}
+
+  {% if prev_movie_url is not none %}
+  <button class="btn-prev" onclick="location.href='{{prev_movie_url}}'">Prev</button>
+  {% endif %}
+
+  {% if next_movie_url is not none %}
+  <button class="btn-next" onclick="location.href='{{next_movie_url}}'">Next</button>
+  {% endif %}
+
+  {% if last_movie_url is not none %}
+  <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
+  {% endif %}
+
+  {% endif %}
+
+  {% for key in movies.keys()%}
+  <div class="movie">
+    <img alt="{{key.title}}" src="{{movies[key]}}">
+<h3>{{key.title}}</h3>
+  <p>{{key.description}}</p>
+    </div>
+{% endfor %}
+
+    {% if movies|length == 4 %}
+
+  {% if first_movie_url is not none %}
+  <button class="btn-prev" onclick="location.href='{{first_movie_url}}'">First</button>
+  {% endif %}
+
+  {% if prev_movie_url is not none %}
+  <button class="btn-prev" onclick="location.href='{{prev_movie_url}}'">Prev</button>
+  {% endif %}
+
+  {% if next_movie_url is not none %}
+  <button class="btn-next" onclick="location.href='{{next_movie_url}}'">Next</button>
+  {% endif %}
+
+  {% if last_movie_url is not none %}
+  <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
+  {% endif %}
+
+  {% endif %}
+
+</main>
+
+{% endblock %}

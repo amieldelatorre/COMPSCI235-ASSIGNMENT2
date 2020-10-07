@@ -1,12 +1,13 @@
 {% extends 'layout.html' %} {% block content %}
 <main id="main">
-  <h2>Welcome to CS235Flix, where you can watch movies as you want</h2>
+  <h3 style="text-align:center">Welcome to CS235Flix, where you can watch movies as you want</h3>
   <p style="text-align: center">This page will display random movies that you can pick from</p>
 <a href="" style="color:white">Click here to refresh list</a>
-  {% for movie in movies%}
+{% for key in movies.keys()%}
   <div class="movie">
-<h3>{{movie.title}}</h3>
-  <p>{{movie.description}}</p>
+    <img alt="{{key.title}}" src="{{movies[key]}}">
+<h3>{{key.title}}</h3>
+  <p>{{key.description}}</p>
     </div>
 {% endfor %}
 </main>

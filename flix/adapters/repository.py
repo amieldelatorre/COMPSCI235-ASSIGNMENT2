@@ -36,16 +36,23 @@ class AbstractRepository(abc.ABC):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def browse_movies(self):
+    def browse_movies(self, search_param_list):
         """ Returns movies in order from the list"""
         raise NotImplementedError
 
-    def get_movies_by_index(self):
+    @abc.abstractmethod
+    def get_movies_by_index(self, index_list):
         """ Returns a list of movies that have been found through their indexes """
         raise NotImplementedError
 
+    @abc.abstractmethod
     def get_number_of_movies(self):
         """ Returns the amount of movies in the repo"""
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def browse_processing(self, movies_list):
+        """ Here the movies list will be turned into a dict and will gather the posters and return a dict """
         raise NotImplementedError
 
 

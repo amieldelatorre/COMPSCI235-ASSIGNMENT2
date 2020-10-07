@@ -1,5 +1,6 @@
 from typing import Iterable
 import random
+import omdb
 
 from flix.adapters.repository import AbstractRepository
 from flix.domainmodel.movie import Movie
@@ -19,9 +20,28 @@ def get_random_movies(quantity, repo: AbstractRepository):
     return movies
 
 
+def get_movie_poster(movie: Movie):
+    omdb.set_default('apikey', "b03ac630")
+    result = omdb.search_movie(movie.title)
+    to_return = None
+    try:
+        to_return = result[0]["poster"]
+    except:
+        pass
+    return to_return
+
 # ============================================
 # Functions to convert dicts to model entities
 # ============================================
+
+
+def movie_list_to_dict(movies):
+    movies_dict = {}
+
+    for movie in movies:
+        movies_dict[movie] = ""
+    return movies_dict
+
 """
 def article_to_dict(article: Article):
     article_dict = {

@@ -7,8 +7,8 @@ home_blueprint = Blueprint('home_bp', __name__)
 
 @home_blueprint.route('/', methods=['GET'])
 def home():
-    movies = services.get_random_movies(7, repo.repo_instance)
-    print(movies)
+    movies = services.get_random_movies(4, repo.repo_instance)
+    # print(movies)
     return render_template('home/home.html',
                            movies=movies
                            )

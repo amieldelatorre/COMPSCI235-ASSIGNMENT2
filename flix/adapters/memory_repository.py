@@ -16,12 +16,13 @@ from flix.domainmodel.review import Review
 from flix.domainmodel.user import User
 from flix.domainmodel.watchlist import WatchList
 from flix.datafilereaders.movie_file_csv_reader import MovieFileCSVReader
-import flix.utilities.services
+import flix.utilities.services as services
 
 
 class MemoryRepository(AbstractRepository):
     def __init__(self):
         self._movies = list()
+        self._users = list()
 
     def add_movie(self, movie: Movie):
         self._movies.append(Movie)
@@ -34,13 +35,44 @@ class MemoryRepository(AbstractRepository):
         return movie_list
 
     def get_movies_by_index(self, index_list):
-        movies = list()
+        movies = dict()
         for index in index_list:
-            movies.append(self._movies[index])
+            movies[self._movies[index]] = services.get_movie_poster(self._movies[index])
         return movies
 
-    def browse_movies(self):
-        pass
+    def browse_movies(self, search_param_list):
+        movies = list()
+        for mov in self._movies:
+            goes_into_list = True
+            for elem in search_param_list:
+                elem = elem.lower()
+                elem_found_a_home = False
+                if elem in mov.title.lower():
+                    elem_found_a_home = True
+                    continue
+                elif elem in mov.director.director_full_name.lower():
+                    elem_found_a_home = True
+                    continue
+                for genre in mov.genres:
+                    if elem in genre.genre_name.lower():
+                        elem_found_a_home = True
+                        break
+                for actor in mov.actors:
+                    if elem in actor.actor_full_name.lower():
+                        elem_found_a_home = True
+                        break
+                if elem_found_a_home == False:
+                    goes_into_list = False;
+                    break
+            if goes_into_list:
+                movies.append(mov)
+        return movies
+
+    def browse_processing(self, movies_list):
+        movies_dict = services.movie_list_to_dict(movies_list)
+        for key in movies_dict.keys():
+            movies_dict[key] = services.get_movie_poster(key)
+        return movies_dict
 
     def get_number_of_movies(self):
         return len(self._movies)

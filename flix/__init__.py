@@ -36,4 +36,7 @@ def create_app(test_config=None):
         from .authentication import authentication
         app.register_blueprint(authentication.authentication_blueprint)
 
+        from .browse import browse
+        app.register_blueprint(browse.browse_blueprint)
+
     return app
