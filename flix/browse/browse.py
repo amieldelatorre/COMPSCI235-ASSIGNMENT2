@@ -56,7 +56,6 @@ def movie_search():
             last_cursor -= movies_per_page
 
         last_movie_url = url_for('browse_bp.movie_search', search=search_param, cursor=last_cursor)
-    print(prev_movie_url,next_movie_url,first_movie_url,last_movie_url)
 
     return render_template('movies/browse.html',
                            movies=processed_movies,
