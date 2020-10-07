@@ -51,7 +51,7 @@ def movie_search():
     if cursor + movies_per_page < len(movies):
         next_movie_url = url_for('browse_bp.movie_search', search=search_param, cursor=cursor+movies_per_page)
 
-        last_cursor = movies_per_page + int(len(movies) / movies_per_page)
+        last_cursor = movies_per_page * int(len(movies) / movies_per_page)
         if len(movies) % movies_per_page == 0:
             last_cursor -= movies_per_page
 
