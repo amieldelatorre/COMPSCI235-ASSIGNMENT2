@@ -3,13 +3,17 @@
   <h3 style="text-align:center">Welcome to CS235Flix, where you can watch movies as you want</h3>
   <p style="text-align: center">This page will display random movies that you can pick from</p>
 <button class="btn-general" onclick="location.href='{{refresh_url}}'">Refresh page to change random movies</button>
-{% for key in movies.keys()%}
-  <div class="movie">
-    <a href="{{movies[key]}}">
-    <img alt="{{key.title}}" src="{{key.poster_link}}">
-<h3>{{key.title}}</h3>
+{% for movie in movies.keys()%}
+  <div class="home-random-movies">
+    <a href="{{movies[movie]}}">
+      {% if movie.poster_link is none%}
+      <img class="result-img" alt="{{movie.title}}" src="{{ url_for('static', filename='blankimg.jpg') }}">
+      {% else %}
+      <img alt="{{movie.title}}" src="{{movie.poster_link}}">
+      {% endif %}
+<h2>{{movie.title}}</h2>
       </a>
-  <p>{{key.description}}</p>
+  <p>{{movie.description}}</p>
     </div>
 {% endfor %}
 </main>

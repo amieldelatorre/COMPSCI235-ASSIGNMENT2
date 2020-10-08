@@ -1,5 +1,4 @@
 from flix.domainmodel.movie import Movie
-from flix.domainmodel.review import Review
 from flix.domainmodel.watchlist import WatchList
 from typing import List
 
@@ -9,7 +8,7 @@ class User:
         self.__user_name: str = user_name.strip().lower()
         self.__password: str = password
         self.__watched_movies: List[Movie] = list()
-        self.__reviews: List[Review] = list()
+        self.__reviews = list()
         self.__time_spent_watching_movies_minutes: int = 0
         self.__watchlist: WatchList = WatchList()
 
@@ -26,7 +25,7 @@ class User:
         return self.__watched_movies
 
     @property
-    def reviews(self) -> List[Review]:
+    def reviews(self):
         return self.__reviews
 
     @property
@@ -41,7 +40,7 @@ class User:
         self.__watched_movies.append(movie)
         self.__time_spent_watching_movies_minutes += movie.runtime_minutes
 
-    def add_review(self, review: Review):
+    def add_review(self, review):
         self.__reviews.append(review)
 
     def __repr__(self):

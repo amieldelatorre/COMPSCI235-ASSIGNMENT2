@@ -1,13 +1,15 @@
 from datetime import datetime
+from flix.domainmodel.user import User
+from flix.domainmodel.movie import Movie
 import time
 
-from flix.domainmodel.movie import Movie
 
 
 class Review:
     def __init__(self, movie: Movie, review_text: str, rating: int):
         self.__movie: Movie = movie
         self.__review_text: str = review_text.strip()
+        self.__user: User = None
 
         if rating < 1 or rating > 10:
             self.__rating = None
@@ -26,12 +28,20 @@ class Review:
         return self.__review_text
 
     @property
+    def user(self) -> User:
+        return self.__user
+
+    @property
     def rating(self) -> int:
         return self.__rating
 
     @property
     def timestamp(self):
         return self.__timestamp
+
+    @user.setter
+    def user(self, user: User):
+        self.__user = user
 
     def __repr__(self):
         return f"<Movie {self.__movie.title}, {self.__timestamp}>"

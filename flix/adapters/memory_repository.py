@@ -23,6 +23,20 @@ class MemoryRepository(AbstractRepository):
     def __init__(self):
         self._movies = list()
         self._users = list()
+        self._reviews = list()
+
+    def add_user(self, user: User):
+        self._users.append(user)
+
+    def get_user(self, username) -> User:
+        return next((user for user in self._users if user.user_name == username), None)
+
+    def add_review(self, review: Review):
+        super().add_review(review)
+        self._reviews.append(review)
+
+    def get_reviews(self):
+        return self._reviews
 
     def add_movie(self, movie: Movie):
         self._movies.append(Movie)

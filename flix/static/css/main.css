@@ -176,6 +176,11 @@ img {
     margin-bottom: 20px;
 }
 
+.home-random-movies {
+    margin: 50px;
+    text-align:center;
+}
+
 .movie {
     margin: 50px;
 }
@@ -369,5 +374,9 @@ input[type='submit']:hover {
 }
 
 p {
+    color: white;
+}
+
+.title, .form-field label, .errors li{
     color: white;
 }

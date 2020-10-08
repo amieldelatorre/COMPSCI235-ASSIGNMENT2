@@ -20,6 +20,7 @@ class Movie:
         self.__director: Director = Director("")
         self.__actors: List[Actor] = list()
         self.__genres: List[Genre] = list()
+        self.__reviews = list()
         self.__runtime_minutes: int = 0
         self.__rating: float = 0
         self.__rating_votes: int = 0
@@ -75,6 +76,10 @@ class Movie:
     def metascore(self) -> int:
         return self.__metascore
 
+    @property
+    def reviews(self):
+        return self.__reviews
+
     @title.setter
     def title(self, title: str):
         self.__title = title
@@ -127,6 +132,10 @@ class Movie:
     def remove_genre(self, genre: Genre):
         if genre in self.__genres:
             self.__genres.remove(genre)
+
+    def add_review(self, review):
+        if review in self.__reviews:
+            self.__reviews.append(review)
 
     @runtime_minutes.setter
     def runtime_minutes(self, runtime: int):
