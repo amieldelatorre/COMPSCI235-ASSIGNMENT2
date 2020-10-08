@@ -55,6 +55,11 @@ class AbstractRepository(abc.ABC):
         """ Here the movies list will be turned into a dict and will gather the posters and return a dict """
         raise NotImplementedError
 
+    @abc.abstractmethod
+    def find_movie_by_title_and_year(self, title: str, year: int):
+        """ Will find a movie by title and year """
+        raise NotImplementedError
+
 
 
 

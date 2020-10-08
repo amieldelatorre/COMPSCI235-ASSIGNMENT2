@@ -35,9 +35,12 @@ class MemoryRepository(AbstractRepository):
         return movie_list
 
     def get_movies_by_index(self, index_list):
-        movies = dict()
+        movies = list()
         for index in index_list:
-            movies[self._movies[index]] = services.get_movie_poster(self._movies[index])
+            movie = self._movies[index]
+            #print(movie)
+            movie.poster_link = services.get_movie_poster(movie)
+            movies.append(movie)
         return movies
 
     def browse_movies(self, search_param_list):
@@ -69,13 +72,21 @@ class MemoryRepository(AbstractRepository):
         return movies
 
     def browse_processing(self, movies_list):
+        for movie in movies_list:
+            movie.poster_link = services.get_movie_poster(movie)
+
         movies_dict = services.movie_list_to_dict(movies_list)
-        for key in movies_dict.keys():
-            movies_dict[key] = services.get_movie_poster(key)
+
         return movies_dict
 
     def get_number_of_movies(self):
         return len(self._movies)
+
+    def find_movie_by_title_and_year(self, title: str, year: int):
+        movie_obj = Movie(title, year)
+        index = self._movies.index(movie_obj)
+        to_return = self._movies[index]
+        return to_return
 
 
 def populate(data_path: str, repo: MemoryRepository):

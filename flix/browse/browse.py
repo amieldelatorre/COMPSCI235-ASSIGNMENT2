@@ -56,6 +56,8 @@ def movie_search():
             last_cursor -= movies_per_page
 
         last_movie_url = url_for('browse_bp.movie_search', search=search_param, cursor=last_cursor)
+    for key in processed_movies.keys():
+        processed_movies[key] = url_for('browse_bp.movie', movie_name=key.title, movie_year=key.year)
 
     return render_template('movies/browse.html',
                            movies=processed_movies,
@@ -63,4 +65,19 @@ def movie_search():
                            prev_movie_url=prev_movie_url,
                            first_movie_url=first_movie_url,
                            last_movie_url=last_movie_url
+                           )
+
+
+@browse_blueprint.route('/movie', methods=['GET', 'POST'])
+def movie():
+
+    title = request.args.get('movie_name')
+    year = int(request.args.get('movie_year'))
+    mov = repo.repo_instance.find_movie_by_title_and_year(title, year)
+    #print(title,year,mov)
+    poster_link = services.get_movie_poster(mov)
+
+    return render_template('movies/movie.html',
+                           movie=mov,
+                           poster_link=poster_link
                            )

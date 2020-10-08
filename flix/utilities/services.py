@@ -16,6 +16,7 @@ def get_random_movies(quantity, repo: AbstractRepository):
     # Pick distinct and random movies.
     random_index = random.sample(range(1, movies_count), quantity)
     movies = repo.get_movies_by_index(random_index)
+    #print(movies)
 
     return movies
 

@@ -1,0 +1,12 @@
+{% extends 'layout.html' %} {% block content %}
+<main id="main">
+  <h3 style="text-align:center">Welcome to CS235Flix, where you can watch movies as you want</h3>
+  <div class="movie">
+    <img alt="{{movie.title}}" src="{{poster_link}}">
+<h3>{{movie.title}}</h3>
+  <p>{{movie.description}}</p>
+    </div>
+
+</main>
+
+{% endblock %}

@@ -27,11 +27,13 @@
   <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
   {% endif %}
 
-  {% for key in movies.keys()%}
+  {% for movie in movies.keys()%}
   <div class="movie">
-    <img alt="{{key.title}}" src="{{movies[key]}}">
-<h3>{{key.title}}</h3>
-  <p>{{key.description}}</p>
+    <a href="{{movies[movie]}}">
+    <img alt="{{movie.title}}" src="{{movie.poster_link}}">
+<h3>{{movie.title}}</h3>
+    </a>
+  <p>{{movie.description}}</p>
     </div>
 {% endfor %}
 

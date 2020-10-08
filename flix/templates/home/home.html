@@ -5,8 +5,10 @@
 <button class="btn-general" onclick="location.href='{{refresh_url}}'">Refresh page to change random movies</button>
 {% for key in movies.keys()%}
   <div class="movie">
-    <img alt="{{key.title}}" src="{{movies[key]}}">
+    <a href="{{movies[key]}}">
+    <img alt="{{key.title}}" src="{{key.poster_link}}">
 <h3>{{key.title}}</h3>
+      </a>
   <p>{{key.description}}</p>
     </div>
 {% endfor %}
