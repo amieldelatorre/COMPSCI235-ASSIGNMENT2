@@ -1,10 +1,30 @@
 {% extends 'layout.html' %} {% block content %}
 <main id="main">
-  <h3 style="text-align:center">Welcome to CS235Flix, where you can watch movies as you want</h3>
   <div class="movie">
-    <img alt="{{movie.title}}" src="{{poster_link}}">
-<h3>{{movie.title}}</h3>
-  <p>{{movie.description}}</p>
+
+    <h2 class="movie-page-title">{{movie.title}}</h2>
+    <div class="photo">
+      {% if movie.poster_link is none%}
+      <img class="movie-page-image" alt="{{movie.title}}" src="{{ url_for('static', filename='blankimg.jpg') }}">
+      {% else %}
+    <img class="movie-page-image" alt="{{movie.title}}" src="{{poster_link}}">
+    {% endif %}
+    </div>
+    <div class="movie-info">
+      <p><strong>Metascore:</strong> {{movie.metascore}}</p>
+      <p><strong>Rating:</strong> {{movie.rating}}</p>
+      <p><strong>Amount of Votes for Rating:</strong> {{movie.rating_votes}}</p>
+      <p><strong>Revenue:</strong> ${{movie.revenue}} million</p>
+      <p><strong>Movie Runtime:</strong> {{movie.runtime_minutes}} minutes</p>
+
+      <a><strong>Genre:</strong> {% for genre in movie.genres%}<a href="{{links[0][genre.genre_name]}}">{{genre.genre_name}}</a> {% endfor %}</p>
+
+      <p><strong>Actors:</strong> {% for actor in movie.actors%}<a href="{{links[1][actor.actor_full_name]}}">{{actor.actor_full_name}}</a>, {% endfor %} ...</p>
+
+      <p><strong>Director:</strong> <a href="{{links[2][movie.director.director_full_name]}}">{{movie.director.director_full_name}}</a></p>
+      <p class="movie-page-description"><strong>Description:</strong> {{movie.description}}</p>
+      </div>
+
     </div>
 
 </main>

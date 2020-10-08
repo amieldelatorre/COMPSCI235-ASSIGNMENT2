@@ -28,10 +28,16 @@ class MovieFileCSVReader:
                 director = row["Director"]
                 actors = row["Actors"]
                 runtime = int(row["Runtime (Minutes)"])
-                rating = row["Rating"]
-                votes = row["Votes"]
-                revenue = row["Revenue (Millions)"]
-                metascore = row["Metascore"]
+                rating = float(row["Rating"])
+                votes = int(row["Votes"])
+                try:
+                    revenue = float(row["Revenue (Millions)"])
+                except ValueError:
+                    revenue = row["Revenue (Millions)"]
+                try:
+                    metascore = int(row["Metascore"])
+                except ValueError:
+                    metascore = row["Metascore"]
 
                 #print(f"Movie {index} with title: {title}, release year {release_year}")
                 #print(index, title, genre, release_year, director, actors, runtime, rating, votes, revenue, metascore)
@@ -40,6 +46,10 @@ class MovieFileCSVReader:
                 movie = Movie(title, release_year)
                 movie.director = movie_director
                 movie.description = description.strip()
+                movie.rating = rating
+                movie.rating_votes = votes
+                movie.revenue = revenue
+                movie.metascore = metascore
                 for actor in actors.split(","):
                     actor = Actor(actor)
                     movie.add_actor(actor)

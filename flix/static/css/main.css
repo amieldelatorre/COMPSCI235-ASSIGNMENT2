@@ -38,6 +38,17 @@ img {
   margin-right: auto;
 }
 
+.result-img {
+    display: block;
+    width: 225px;
+    height: auto;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 225px;
+    min-height: 319px;
+}
+
 .img-small {
     display: block;
     width: 300px;
@@ -109,6 +120,11 @@ img {
     color: black;
 }
 
+.search-btns {
+    width: 100%;
+    display: inline-block;
+}
+
 .btn-general {
     background-color: #D3D3D3;
     color: black;
@@ -142,8 +158,68 @@ img {
     word-break: break-all;
 }
 
+.search-results {
+    margin: 50px
+    display: inline-block;
+}
+
+.movie-search {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-search {
+    width: 50%;
+    padding: 20px;
+    float:left;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
 .movie {
     margin: 50px;
+}
+
+.movie .movie-page-title {
+    font-size: 250%;
+}
+
+.movie p {
+    text-align: center;
+}
+
+.photo {
+    width: 50%;
+    float: left;
+}
+
+.photo .movie-page-image {
+    width: 375px;
+    height: auto;
+}
+
+.movie-info {
+    width: 50%;
+    float: right;
+    height:540px;
+    padding-top: 50px;
+}
+
+.movie-info p{
+    margin: 5px;
+    text-align: left;
+}
+
+.movie-info strong {
+    color: #808080;
+}
+
+.movie-info .movie-page-description {
+    margin-top: 25px;
+}
+
+.movie-info a {
+    color: white;
 }
 
 #body {

@@ -21,10 +21,10 @@ class Movie:
         self.__actors: List[Actor] = list()
         self.__genres: List[Genre] = list()
         self.__runtime_minutes: int = 0
-        self.__rating: int = 0
+        self.__rating: float = 0
         self.__rating_votes: int = 0
-        self.__revenue: int = 0
-        self.__metascore: int = 0
+        self.__revenue: float = 0
+        self.__metascore: float = 0
         self.__poster_link: str = None
 
     @property
@@ -59,6 +59,22 @@ class Movie:
     def poster_link(self) -> str:
         return self.__poster_link
 
+    @property
+    def rating(self) -> float:
+        return self.__rating
+
+    @property
+    def rating_votes(self) -> int:
+        return self.__rating_votes
+
+    @property
+    def revenue(self) -> float:
+        return self.__revenue
+
+    @property
+    def metascore(self) -> int:
+        return self.__metascore
+
     @title.setter
     def title(self, title: str):
         self.__title = title
@@ -79,6 +95,22 @@ class Movie:
     @poster_link.setter
     def poster_link(self, link: str):
         self.__poster_link = link
+
+    @rating.setter
+    def rating(self, rate: float):
+        self.__rating = rate
+
+    @rating_votes.setter
+    def rating_votes(self, votes: int):
+        self.__rating_votes = votes
+
+    @revenue.setter
+    def revenue(self, rev: float):
+        self.__revenue = rev
+
+    @metascore.setter
+    def metascore(self, score: int):
+        self.__metascore = score
 
     def add_actor(self, actor: Actor):
         if actor not in self.__actors:

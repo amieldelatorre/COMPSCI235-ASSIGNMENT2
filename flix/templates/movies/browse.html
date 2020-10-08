@@ -10,7 +10,7 @@
     <button type="submit" class="search-btn">Search</button>
   </form>
 
-
+<div class="search-btns">
   {% if first_movie_url is not none %}
   <button class="btn-prev" onclick="location.href='{{first_movie_url}}'">First</button>
   {% endif %}
@@ -26,17 +26,24 @@
   {% if last_movie_url is not none %}
   <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
   {% endif %}
-
+</div>
+  <div class="search-results">
   {% for movie in movies.keys()%}
-  <div class="movie">
+  <div class="movie-search">
     <a href="{{movies[movie]}}">
-    <img alt="{{movie.title}}" src="{{movie.poster_link}}">
+      {% if movie.poster_link is none%}
+      <img class="result-img" alt="{{movie.title}}" src="{{ url_for('static', filename='blankimg.jpg') }}">
+      {% else %}
+      <img class="result-img" alt="{{movie.title}}" src="{{movie.poster_link}}">
+      {% endif %}
 <h3>{{movie.title}}</h3>
     </a>
   <p>{{movie.description}}</p>
     </div>
 {% endfor %}
+</div>
 
+  <div class="search-btns">
   {% if first_movie_url is not none %}
   <button class="btn-prev" onclick="location.href='{{first_movie_url}}'">First</button>
   {% endif %}
@@ -52,7 +59,7 @@
   {% if last_movie_url is not none %}
   <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
   {% endif %}
-
+  </div>
 </main>
 
 {% endblock %}

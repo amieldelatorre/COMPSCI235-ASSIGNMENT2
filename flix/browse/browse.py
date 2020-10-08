@@ -77,7 +77,24 @@ def movie():
     #print(title,year,mov)
     poster_link = services.get_movie_poster(mov)
 
+    search_list_of_dict = list()
+    # indexes = 0 --> genres, 1 --> actors,3 --> director
+    genre_dict = {}
+    actor_dict = {}
+    director_dict = {}
+    for genre in mov.genres:
+        genre_dict[genre.genre_name] = url_for('browse_bp.movie_search',  search=genre.genre_name)
+    search_list_of_dict.append(genre_dict)
+
+    for actor in mov.actors:
+        actor_dict[actor.actor_full_name] = url_for('browse_bp.movie_search', search=actor.actor_full_name)
+    search_list_of_dict.append(actor_dict)
+
+    director_dict[mov.director.director_full_name] = url_for('browse_bp.movie_search', search=mov.director.director_full_name)
+    search_list_of_dict.append(director_dict)
+
     return render_template('movies/movie.html',
                            movie=mov,
-                           poster_link=poster_link
+                           poster_link=poster_link,
+                           links=search_list_of_dict
                            )
