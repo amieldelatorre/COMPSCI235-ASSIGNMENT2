@@ -41,7 +41,8 @@ class User:
         self.__time_spent_watching_movies_minutes += movie.runtime_minutes
 
     def add_review(self, review):
-        self.__reviews.append(review)
+        if review not in self.__reviews:
+            self.__reviews.append(review)
 
     def __repr__(self):
         return f"<User {self.__user_name}>"

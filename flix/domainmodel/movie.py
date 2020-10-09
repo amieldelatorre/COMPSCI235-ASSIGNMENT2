@@ -134,7 +134,7 @@ class Movie:
             self.__genres.remove(genre)
 
     def add_review(self, review):
-        if review in self.__reviews:
+        if review not in self.__reviews:
             self.__reviews.append(review)
 
     @runtime_minutes.setter

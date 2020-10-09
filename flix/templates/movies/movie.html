@@ -17,16 +17,57 @@
       <p><strong>Revenue:</strong> ${{movie.revenue}} million</p>
       <p><strong>Movie Runtime:</strong> {{movie.runtime_minutes}} minutes</p>
 
-      <a><strong>Genre:</strong> {% for genre in movie.genres%}<a href="{{links[0][genre.genre_name]}}">{{genre.genre_name}}</a> {% endfor %}</p>
+      <p><strong>Genre:</strong> {% for genre in movie.genres%}<a href="{{links[0][genre.genre_name]}}">{{genre.genre_name}}</a> {% endfor %}</p>
 
       <p><strong>Actors:</strong> {% for actor in movie.actors%}<a href="{{links[1][actor.actor_full_name]}}">{{actor.actor_full_name}}</a>, {% endfor %} ...</p>
 
       <p><strong>Director:</strong> <a href="{{links[2][movie.director.director_full_name]}}">{{movie.director.director_full_name}}</a></p>
       <p class="movie-page-description"><strong>Description:</strong> {{movie.description}}</p>
       </div>
-
     </div>
 
+<div class="bottom-section">
+  {% if 'username' in session %}
+  <div class="review-section">
+    <form action="{{handler_url}}" method="post">
+      {{form.movie}} <!-- Need to include this hidden field as it tracks the article being commented. -->
+      {{form.csrf_token}} <!-- Need to include this token - Flask WTForms requires it. -->
+      <br>
+      <div class ="form-field">{{form.review.label}}
+        {{form.review(placeholder="Type your review", class="textarea", cols="50", rows="6", wrap="hard")}}
+        <br>
+        {{form.rating.label}}
+        {{form.rating(placeholder="1-10", class="intarea")}}
+        {% if form.review.errors or form.rating.errors%}
+        <ul class="errors">
+          {% for error in form.review.errors %}
+          <li>{{error}}</li>
+          {% endfor %}
+          {% for error in form.rating.errors %}
+          <li>{{error}}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {{ form.submit }}
+    </form>
+  </div>
+  {% endif %}
+<hr>
+  <br>
+  <div class="other-user-reviews">
+    <h3>Reviews: </h3>
+    <br>
+  {% for review in movie.reviews%}
+      <p><strong>User:</strong> {{review.user.user_name}}</p>
+      <p><strong>Text:</strong> {{review.review_text}}</p>
+      <p><strong>Rating:</strong> {{review.rating}}</p>
+      <p><strong>Time:</strong> {{review.timestamp}}</p>
+      <hr>
+  {% endfor %}
+
+  </div>
+</div>
 </main>
 
 {% endblock %}

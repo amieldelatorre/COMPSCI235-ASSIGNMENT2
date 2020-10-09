@@ -4,7 +4,6 @@ from flix.domainmodel.movie import Movie
 import time
 
 
-
 class Review:
     def __init__(self, movie: Movie, review_text: str, rating: int):
         self.__movie: Movie = movie
@@ -37,7 +36,7 @@ class Review:
 
     @property
     def timestamp(self):
-        return self.__timestamp
+        return datetime.fromtimestamp(self.__timestamp).ctime()
 
     @user.setter
     def user(self, user: User):
@@ -67,4 +66,6 @@ movie = Movie("Movie", 2019)
 review2 = Review(movie, review_text, rating)
 print(1, review)
 print(2, review2)
-print(review == review2)"""
+print(review == review2)
+print(review.timestamp)
+"""

@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  color: black;
+  color: white;
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
@@ -153,9 +153,11 @@ img {
 }
 
 .textarea {
-    width: 100%;
+    width: 50%;
     overflow: auto;
     word-break: break-all;
+    color: black;
+    padding: 5px;
 }
 
 .search-results {
@@ -180,6 +182,9 @@ img {
 
 .movie {
     margin: 50px;
+    width: 100%
+    height: auto;
+    displau: inline-block;
 }
 
 .movie .movie-page-title {
@@ -212,7 +217,7 @@ img {
     text-align: left;
 }
 
-.movie-info strong {
+.movie-info strong, .other-user-reviews strong {
     color: #808080;
 }
 
@@ -333,6 +338,7 @@ input[type='text'],
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
+        color: black;
     }
 
 input[type='password'],
@@ -344,6 +350,7 @@ input[type='password'],
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
+        color:black;
     }
 
 input[type='submit'] {
@@ -363,7 +370,7 @@ input[type='submit']:hover {
 }
 
 .icon {
-    width: 1.5em;
+    width: 1.5em;.
     height: 1.5em;
     vertical-align: -0.5em;
     fill: currentColor;
@@ -376,4 +383,39 @@ p {
 
 .title, .form-field label, .errors li{
     color: white;
+    display:inline-block;
+    width: 100%;
+}
+
+.bottom-section {
+    display: inline-block;
+    margin-top: 30px;
+    width: 100%
+}
+
+.review-section input[type='text'] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+}
+
+.review-section input[type='number'] {
+    width: 100px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+}
+
+
+.review-section input[type='submit'] {
+    width: 30%
 }

@@ -4,6 +4,7 @@ import omdb
 
 from flix.adapters.repository import AbstractRepository
 from flix.domainmodel.movie import Movie
+from flix.domainmodel.review import Review
 
 
 def get_random_movies(quantity, repo: AbstractRepository):
@@ -31,6 +32,23 @@ def get_movie_poster(movie: Movie):
         pass
     return to_return
 
+
+def add_review(movie: Movie, review_txt: str, rating: int, username: str, repo: AbstractRepository):
+    user = repo.get_user(username)
+    if user is None:
+        raise UnknownUserException
+
+    review = Review(movie, review_txt, rating)
+    review.user = user
+    user.add_review(review)
+    # print(movie, user)
+    movie.add_review(review)
+
+    repo.add_review(review)
+
+
+class UnknownUserException(Exception):
+    pass
 # ============================================
 # Functions to convert dicts to model entities
 # ============================================

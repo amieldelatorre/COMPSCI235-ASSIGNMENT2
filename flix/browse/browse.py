@@ -3,6 +3,14 @@ from flask import request, redirect, url_for, session
 import flix.utilities.utilities as utilities
 import flix.utilities.services as services
 import flix.adapters.repository as repo
+
+from better_profanity import profanity
+from flask_wtf import FlaskForm
+from wtforms import TextAreaField, HiddenField, SubmitField, IntegerField
+from wtforms.validators import DataRequired, Length, ValidationError, NumberRange, InputRequired
+from wtforms.widgets import html5 as widgets
+
+
 browse_blueprint = Blueprint('browse_bp', __name__)
 
 
@@ -70,11 +78,12 @@ def movie_search():
 
 @browse_blueprint.route('/movie', methods=['GET', 'POST'])
 def movie():
+    form = ReviewForm()
 
     title = request.args.get('movie_name')
     year = int(request.args.get('movie_year'))
     mov = repo.repo_instance.find_movie_by_title_and_year(title, year)
-    #print(title,year,mov)
+    # print(title,year,mov)
     poster_link = services.get_movie_poster(mov)
 
     search_list_of_dict = list()
@@ -93,8 +102,47 @@ def movie():
     director_dict[mov.director.director_full_name] = url_for('browse_bp.movie_search', search=mov.director.director_full_name)
     search_list_of_dict.append(director_dict)
 
+    form.movie = mov
+    try:
+        username = session['username']
+    except KeyError:
+        pass
+
+    if form.validate_on_submit():
+        services.add_review(form.movie, form.review.data, form.rating.data, username, repo.repo_instance)
+
+        return redirect(url_for('browse_bp.movie', movie_name=form.movie.title, movie_year=form.movie.year))
+
     return render_template('movies/movie.html',
                            movie=mov,
                            poster_link=poster_link,
-                           links=search_list_of_dict
+                           links=search_list_of_dict,
+                           form=form,
+                           handler_url=url_for('browse_bp.movie', movie_name=mov.title, movie_year=mov.year)
                            )
+
+
+class ProfanityFree:
+    def __init__(self, message=None):
+        if not message:
+            message = u'Field must not contain profanity'
+        self.message = message
+
+    def __call__(self, form, field):
+        if profanity.contains_profanity(field.data):
+            raise ValidationError(self.message)
+
+
+class ReviewForm(FlaskForm):
+    review = TextAreaField('Review Text', [
+        DataRequired(),
+        Length(min=4, message='Your comment is too short'),
+        ProfanityFree(message='Your comment must not contain profanity')])
+
+    rating = IntegerField('Rating', widget=widgets.NumberInput(min=1, max=10), validators=[
+        DataRequired(),
+        NumberRange(min=1, max=10, message="Value must within the range of 1 - 10")
+    ])
+
+    submit = SubmitField('Submit')
+    movie = HiddenField("movie")
