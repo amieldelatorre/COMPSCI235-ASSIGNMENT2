@@ -19,13 +19,15 @@
   <button class="btn-prev" onclick="location.href='{{prev_movie_url}}'">Prev</button>
   {% endif %}
 
+  {% if last_movie_url is not none %}
+  <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
+  {% endif %}
+
   {% if next_movie_url is not none %}
   <button class="btn-next" onclick="location.href='{{next_movie_url}}'">Next</button>
   {% endif %}
 
-  {% if last_movie_url is not none %}
-  <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
-  {% endif %}
+
 </div>
   <div class="search-results">
   {% for movie in movies.keys()%}
@@ -52,13 +54,15 @@
   <button class="btn-prev" onclick="location.href='{{prev_movie_url}}'">Prev</button>
   {% endif %}
 
+   {% if last_movie_url is not none %}
+  <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
+  {% endif %}
+
   {% if next_movie_url is not none %}
   <button class="btn-next" onclick="location.href='{{next_movie_url}}'">Next</button>
   {% endif %}
 
-  {% if last_movie_url is not none %}
-  <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
-  {% endif %}
+
   </div>
 </main>
 
