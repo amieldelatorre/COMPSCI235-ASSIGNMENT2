@@ -70,8 +70,13 @@ class AbstractRepository(abc.ABC):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def get_movies_by_index(self, index_list):
+    def get_movies_by_index_list(self, index_list):
         """ Returns a list of movies that have been found through their indexes """
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def get_movies_by_index(self, index):
+        """ Returns a movies that have been found through an index """
         raise NotImplementedError
 
     @abc.abstractmethod

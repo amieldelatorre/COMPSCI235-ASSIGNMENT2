@@ -107,13 +107,15 @@ def movie():
     form.movie = mov
     try:
         username = session['username']
+
+        if repo.repo_instance.get_user(username) is not None:
+            if form.validate_on_submit():
+                services.add_review(form.movie, form.review.data, form.rating.data, username, repo.repo_instance)
+
+                return redirect(url_for('browse_bp.movie', movie_name=form.movie.title, movie_year=form.movie.year))
     except KeyError:
         pass
 
-    if form.validate_on_submit():
-        services.add_review(form.movie, form.review.data, form.rating.data, username, repo.repo_instance)
-
-        return redirect(url_for('browse_bp.movie', movie_name=form.movie.title, movie_year=form.movie.year))
 
     return render_template('movies/movie.html',
                            movie=mov,

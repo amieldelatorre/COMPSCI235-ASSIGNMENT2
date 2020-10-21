@@ -30,7 +30,7 @@ class MemoryRepository(AbstractRepository):
         self._users.append(user)
 
     def get_user(self, username) -> User:
-        return next((user for user in self._users if user.user_name == username), None)
+        return next((user for user in self._users if user.user_name == username.lower()), None)
 
     def add_review(self, review: Review):
         super().add_review(review)
@@ -40,7 +40,7 @@ class MemoryRepository(AbstractRepository):
         return self._reviews
 
     def add_movie(self, movie: Movie):
-        self._movies.append(Movie)
+        self._movies.append(movie)
 
     def get_movie(self, movie_name: str):
         movie_list = list()
@@ -49,10 +49,23 @@ class MemoryRepository(AbstractRepository):
                 movie_list.append(self._movies[i])
         return movie_list
 
-    def get_movies_by_index(self, index_list):
+    def get_movies_by_index(self, index):
+        movie = None
+        # print(self._movies)
+        try:
+            movie = self._movies[index]
+        except:
+            pass
+
+        return movie
+
+    def get_movies_by_index_list(self, index_list):
         movies = list()
         for index in index_list:
-            movie = self._movies[index]
+            try:
+                movie = self._movies[index]
+            except:
+                continue
             #print(movie)
             movie.poster_link = services.get_movie_poster(movie)
             movies.append(movie)
