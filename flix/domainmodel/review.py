@@ -52,6 +52,15 @@ class Review:
             return False
 
 
+def make_review(review_text: str, rating: int, user: User, movie: Movie):
+    review = Review(movie, review_text, rating)
+    review.user = user
+    user.add_review(review)
+    movie.add_review(review)
+    # print('here')
+    return review
+
+
 """
 movie = Movie("Moana", 2016)
 review_text = "This movie was very enjoyable."

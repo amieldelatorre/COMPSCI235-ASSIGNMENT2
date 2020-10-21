@@ -16,7 +16,6 @@ browse_blueprint = Blueprint('browse_bp', __name__)
 
 @browse_blueprint.route('/browse', methods=['GET'])
 def browse():
-    global movie_index
     movie_index = 0
     search_url = url_for('browse_bp.movie_search')
     return render_template('movies/browse.html',
@@ -29,7 +28,7 @@ def browse():
 def movie_search():
     movies_per_page = 4
     search_param = request.args.get('search')
-    search_param_list = search_param.split()
+    search_param_list = search_param.split(',')
     for i in range(len(search_param_list)):
         search_param_list[i] = search_param_list[i].strip()
 
@@ -80,8 +79,11 @@ def movie_search():
 def movie():
     form = ReviewForm()
 
-    title = request.args.get('movie_name')
-    year = int(request.args.get('movie_year'))
+    try:
+        title = request.args.get('movie_name')
+        year = int(request.args.get('movie_year'))
+    except:
+        return redirect(url_for('home_bp.home'))
     mov = repo.repo_instance.find_movie_by_title_and_year(title, year)
     # print(title,year,mov)
     poster_link = services.get_movie_poster(mov)
@@ -136,8 +138,8 @@ class ProfanityFree:
 class ReviewForm(FlaskForm):
     review = TextAreaField('Review Text', [
         DataRequired(),
-        Length(min=4, message='Your comment is too short'),
-        ProfanityFree(message='Your comment must not contain profanity')])
+        Length(min=4, message='Your review is too short'),
+        ProfanityFree(message='Your review must not contain profanity')])
 
     rating = IntegerField('Rating', widget=widgets.NumberInput(min=1, max=10), validators=[
         DataRequired(),

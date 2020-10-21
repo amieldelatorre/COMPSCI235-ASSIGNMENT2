@@ -44,6 +44,9 @@ class User:
         if review not in self.__reviews:
             self.__reviews.append(review)
 
+    def add_to_watchlist(self, movie: Movie):
+        self.__watchlist.add_movie(movie)
+
     def __repr__(self):
         return f"<User {self.__user_name}>"
 

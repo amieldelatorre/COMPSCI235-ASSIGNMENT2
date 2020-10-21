@@ -16,7 +16,7 @@ def create_app(test_config=None):
 
     # Configure the app from configuration-file settings.
     app.config.from_object('config.Config')
-    data_path = os.path.abspath("flix/datafiles/Data1000Movies.csv")
+    data_path = os.path.abspath("flix/datafiles")
 
     if test_config is not None:
         # Load test configuration, and overrride any configuration settings.

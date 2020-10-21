@@ -17,6 +17,7 @@ from flix.domainmodel.user import User
 from flix.domainmodel.watchlist import WatchList
 from flix.datafilereaders.movie_file_csv_reader import MovieFileCSVReader
 import flix.utilities.services as services
+from flix.domainmodel.review import make_review
 
 
 class MemoryRepository(AbstractRepository):
@@ -103,10 +104,48 @@ class MemoryRepository(AbstractRepository):
         return to_return
 
 
-def populate(data_path: str, repo: MemoryRepository):
-    reader = MovieFileCSVReader(data_path)
+def read_csv_file(filename: str):
+    with open(filename, encoding='utf-8-sig') as infile:
+        reader = csv.reader(infile)
+
+        # Read first line of the the CSV file.
+        headers = next(reader)
+
+        # Read remaining rows from the CSV file.
+        for row in reader:
+            # Strip any leading/trailing white space from data read.
+            row = [item.strip() for item in row]
+            yield row
+
+
+def load_movies(data_path: str, repo: MemoryRepository):
+    reader = MovieFileCSVReader(os.path.join(data_path, 'Data1000Movies.csv'))
     reader.read_csv_file()
     repo._movies = reader.dataset_of_movies
+    #print('here')
+
+
+def load_users(data_path: str, repo: MemoryRepository):
+    #print(data_path)
+    for data_row in read_csv_file(os.path.join(data_path, 'users.csv')):
+        user = User(data_row[1], generate_password_hash(data_row[2]))
+        repo.add_user(user)
+
+
+def load_review(data_path: str, repo: MemoryRepository):
+    for data_row in read_csv_file(os.path.join(data_path, 'reviews.csv')):
+        # print(data_row)
+        review = make_review(data_row[4], int(data_row[3]), repo._users[int(data_row[1])], repo._movies[int(data_row[2])])
+        # print(review)
+        repo.add_review(review)
+
+
+def populate(data_path: str, repo: MemoryRepository):
+    load_movies(data_path, repo)
+    load_users(data_path, repo)
+    load_review(data_path, repo)
+    # print(repo._reviews)
+    # print(repo._users[0])
     # print(repo.get_movie("Guardian"))
 
 

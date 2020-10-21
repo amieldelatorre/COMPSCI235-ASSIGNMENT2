@@ -1,7 +1,7 @@
-from domainmodel.movie import Movie
-from domainmodel.user import User
-from domainmodel.review import Review
-from domainmodel.watchlist import WatchList
+from flix.domainmodel.movie import Movie
+from flix.domainmodel.user import User
+from flix.domainmodel.review import Review
+from flix.domainmodel.watchlist import WatchList
 from typing import List
 
 
