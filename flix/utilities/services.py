@@ -24,10 +24,10 @@ def get_random_movies(quantity, repo: AbstractRepository):
 
 def get_movie_poster(movie: Movie):
     omdb.set_default('apikey', "b03ac630")
-    result = omdb.search_movie(movie.title)
+    result = omdb.get(title=movie.title, year=movie.year, fullplot=True, tomatoes=True)
     to_return = None
     try:
-        to_return = result[0]["poster"]
+        to_return = result['poster']
     except:
         pass
     return to_return
