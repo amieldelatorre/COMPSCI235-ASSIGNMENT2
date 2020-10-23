@@ -68,28 +68,28 @@ def test_repository_does_not_retrieve_a_non_existent_movie(in_memory_repo):
 
 
 def test_repository_does_not_retrieve_an_review_when_there_are_no_reviews_for_query(in_memory_repo):
-    movies = in_memory_repo.browse_movies(['asdfasdfas', 'asdfasdf'])
+    movies = in_memory_repo.browse_movies('asdfasdfas', 'asdfasdf', [], [], None)
     assert len(movies) == 0
 
 
 def test_repository_retrieves_movies_on_a_search(in_memory_repo):
-    movies1 = in_memory_repo.browse_movies(['action'])
+    movies1 = in_memory_repo.browse_movies(None, None, [], ['action'], None)
     assert len(movies1) == 303
 
-    movies2 = in_memory_repo.browse_movies(['angelina jolie'])
-    assert len(movies2) == 8
+    movies2 = in_memory_repo.browse_movies(None, None, ['angelina jolie'], [], None)
+    assert len(movies2) == 7
 
-    movies3 = in_memory_repo.browse_movies(['Ron Clements'])
+    movies3 = in_memory_repo.browse_movies(None, 'Ron Clements', [], [], None)
     assert len(movies3) == 2
 
-    movies4 = in_memory_repo.browse_movies(['2012'])
-    assert len(movies4) == 65
+    movies4 = in_memory_repo.browse_movies(None, None, [], [], 2012)
+    assert len(movies4) == 64
 
-    movies5 = in_memory_repo.browse_movies(['Guardians'])
+    movies5 = in_memory_repo.browse_movies('Guardians', None, [], [], None)
     assert len(movies5) == 1
 
-    movies6 = in_memory_repo.browse_movies((['G.I. Joe: Retaliation', 'Action', 'Adventure', 'Sci-Fi', 'Jon M. Chu',
-                                             'Channing Tatum', "Dwayne Johnson", '2013']))
+    movies6 = in_memory_repo.browse_movies('G.I. Joe: Retaliation', 'Jon M. Chu', ['Channing Tatum', "Dwayne Johnson"],
+                                            ['Action', 'Adventure', 'Sci-Fi'], 2013)
     assert len(movies6) == 1
 
 def test_repository_gets_movies_with_index_list(in_memory_repo):
