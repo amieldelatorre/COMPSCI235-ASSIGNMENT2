@@ -7,7 +7,7 @@ from flix.authentication.authentication import login_required
 
 from better_profanity import profanity
 from flask_wtf import FlaskForm
-from wtforms import TextAreaField, HiddenField, SubmitField, IntegerField
+from wtforms import TextAreaField, HiddenField, SubmitField, IntegerField, StringField
 from wtforms.validators import DataRequired, Length, ValidationError, NumberRange, InputRequired
 from wtforms.widgets import html5 as widgets
 
@@ -17,7 +17,6 @@ browse_blueprint = Blueprint('browse_bp', __name__)
 
 @browse_blueprint.route('/browse', methods=['GET'])
 def browse():
-    movie_index = 0
     search_url = url_for('browse_bp.movie_search')
     return render_template('movies/browse.html',
                            search_url=search_url,
@@ -28,12 +27,36 @@ def browse():
 @browse_blueprint.route('/movie_search', methods=['GET', 'POST'])
 def movie_search():
     movies_per_page = 4
-    search_param = request.args.get('search')
-    search_param_list = search_param.split(',')
-    for i in range(len(search_param_list)):
-        search_param_list[i] = search_param_list[i].strip()
+    try:
+        title = request.args.get('movie_name').strip()
+    except:
+        title = None
+    try:
+        director = request.args.get('movie_director').strip()
+    except:
+        director = None
+    actors_string = request.args.get('movie_actors')
+    genres_string = request.args.get('movie_genres')
+    try:
+        year = int(request.args.get('movie_year'))
+    except:
+        year = None
 
-    movies = repo.repo_instance.browse_movies(search_param_list)
+    try:
+        actors = actors_string.split(',')
+        for i in range(len(actors)):
+            actors[i] = actors[i].strip()
+    except:
+        actors = []
+
+    try:
+        genres = genres_string.split(',')
+        for i in range(len(genres)):
+            genres[i] = genres[i].strip()
+    except:
+        genres = []
+
+    movies = repo.repo_instance.browse_movies(title, director, actors, genres, year)
     # print(len(movies))
     # processed_movies = repo.repo_instance.browse_processing(movies)
 
@@ -53,17 +76,23 @@ def movie_search():
     last_movie_url = None
 
     if cursor > 0:
-        prev_movie_url = url_for('browse_bp.movie_search',  search=search_param, cursor=cursor-movies_per_page)
-        first_movie_url = url_for('browse_bp.movie_search',  search=search_param)
+        prev_movie_url = url_for('browse_bp.movie_search', movie_title=title, movie_year=year,
+                                 movie_director=director, movie_genres=genres_string, movie_actors=actors_string,
+                                 submit='Submit', cursor=cursor-movies_per_page)
+        first_movie_url = url_for('browse_bp.movie_search')
 
     if cursor + movies_per_page < len(movies):
-        next_movie_url = url_for('browse_bp.movie_search', search=search_param, cursor=cursor+movies_per_page)
+        next_movie_url = url_for('browse_bp.movie_search', movie_title=title, movie_year=year,
+                                 movie_director=director, movie_genres=genres_string, movie_actors=actors_string,
+                                 submit='Submit', cursor=cursor+movies_per_page)
 
         last_cursor = movies_per_page * int(len(movies) / movies_per_page)
         if len(movies) % movies_per_page == 0:
             last_cursor -= movies_per_page
 
-        last_movie_url = url_for('browse_bp.movie_search', search=search_param, cursor=last_cursor)
+        last_movie_url = url_for('browse_bp.movie_search', movie_title=title, movie_year=year,
+                                 movie_director=director, movie_genres=genres_string, movie_actors=actors_string,
+                                 submit='Submit', cursor=last_cursor)
     for key in processed_movies.keys():
         processed_movies[key] = url_for('browse_bp.movie', movie_name=key.title, movie_year=key.year)
 
@@ -139,6 +168,7 @@ def review():
     genre_dict = {}
     actor_dict = {}
     director_dict = {}
+    year_dict = {}
     for genre in mov.genres:
         genre_dict[genre.genre_name] = url_for('browse_bp.movie_search', search=genre.genre_name)
     search_list_of_dict.append(genre_dict)
@@ -150,6 +180,9 @@ def review():
     director_dict[mov.director.director_full_name] = url_for('browse_bp.movie_search',
                                                              search=mov.director.director_full_name)
     search_list_of_dict.append(director_dict)
+
+    year_dict[mov.year] = url_for('browse_bp.movie_search', search=mov.year)
+    search_list_of_dict.append(year_dict)
 
     form.movie.data = repo.repo_instance.find_movie_index(mov)
     username = session['username']

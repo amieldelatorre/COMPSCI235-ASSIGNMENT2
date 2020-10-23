@@ -404,7 +404,7 @@ p {
     color: black;
 }
 
-.review-section input[type='number'] {
+input[type='number'] {
     width: 100px;
     padding: 12px 20px;
     margin: 8px 0;

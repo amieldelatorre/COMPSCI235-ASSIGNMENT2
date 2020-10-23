@@ -3,11 +3,27 @@
   <h3 style="text-align:center">Welcome to CS235Flix, where you can watch movies as you want</h3>
   <h2 style="margin-top:20px">Browse</h2>
   <form method="GET" action="{{search_url}}">
-  <h3 style="margin-top:50px">*Please search for a movie by movie name, actor name, director name, genre, separated by commas, uppercase or lowercase*</h3>
+  <h3 style="margin-top:50px">*Please separate actor names and genres by a comma*</h3>
+    <br>
+
   <div class="form-field">
-    <input id="search" name="search" required type="text" placeholder="Angelina Jolie, Action">
+    <label for="movie_name">Title</label>
+    <input id="movie_name" name="movie_name" placeholder="Title" type="text" value="">
+
+    <label for="movie_director">Director</label>
+    <input id="movie_director" name="movie_director" placeholder="Director" type="text" value="">
+
+    <label for="movie_actors">Actors</label>
+    <input id="movie_actors" name="movie_actors" placeholder="Angelina Jolie, Brad Pitt" type="text" value="">
+
+
+    <label for="movie_genres">Genre</label>
+    <input id="movie_genres" name="movie_genres" placeholder="Action, Mystery" type="text" value="">
+
+    <label for="movie_year">Year</label>
+    <input class="intarea" id="movie_year" name="movie_year" placeholder="Year" type="number" value="">
   </div>
-    <button type="submit" class="search-btn">Search</button>
+    <input id="submit" name="submit" type="submit" value="Submit">
   </form>
 
 <div class="search-btns">

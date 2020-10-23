@@ -141,10 +141,16 @@ def test_browse_no_parameters(client):
 
 
 def test_browse_with_parameters(client):
-    response = client.get('/movie_search?search=action%2C+x-men%2C+hugh%2C+bryan+singer')
+    response = client.get('/movie_search?movie_name=days+of+future&movie_director=bryan&movie_actors=patrick%2C+ian&movie_genres=action%2C+sci-fi&movie_year=2014&submit=Submit')
     assert b'X-Men: Days of Future Past' in response.data
     assert b'The X-Men send Wolverine to the past in a desperate effort to change history and prevent an event that ' \
            b'results in doom for both humans and mutants.' in response.data
+
+    response = client.get('/movie_search?movie_name=&movie_director=&movie_actors=leonardo+d&movie_genres=&movie_year=&submit=Submit')
+    assert b'Inception' in response.data
+    assert b'The Wolf of Wall Street' in response.data
+    assert b'The Departed' in response.data
+    assert b'The Revenant' in response.data
 
 
 def test_login_required_to_watch(client):

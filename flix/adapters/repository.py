@@ -65,7 +65,7 @@ class AbstractRepository(abc.ABC):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def browse_movies(self, search_param_list):
+    def browse_movies(self, title, director, actors, genres, year):
         """ Returns movies in order from the list"""
         raise NotImplementedError
 

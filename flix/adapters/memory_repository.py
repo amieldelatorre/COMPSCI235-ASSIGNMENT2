@@ -71,39 +71,53 @@ class MemoryRepository(AbstractRepository):
             movies.append(movie)
         return movies
 
-    def browse_movies(self, search_param_list):
+    def browse_movies(self, title, director, actors, genres, year):
         movies = list()
-        for mov in self._movies:
+
+        for movie in self._movies:
             goes_into_list = True
-            for elem in search_param_list:
-                elem = elem.lower()
-                elem_found_a_home = False
-                try:
-                    elem_as_num = int(elem)
-                    if elem_as_num == mov.year:
-                        elem_found_a_home = True
-                        continue
-                except:
-                    pass
-                if elem in mov.title.lower():
-                    elem_found_a_home = True
-                    continue
-                elif elem in mov.director.director_full_name.lower():
-                    elem_found_a_home = True
-                    continue
-                for genre in mov.genres:
-                    if elem in genre.genre_name.lower():
-                        elem_found_a_home = True
+            if title is None or title == "":
+                #print('here')
+                pass
+            elif title.lower() not in movie.title.lower():
+                #print('here2')
+                goes_into_list = False
+                continue
+
+            if director is None or director == "":
+                pass
+            elif director.lower() not in movie.director.director_full_name.lower():
+                goes_into_list = False
+                continue
+
+            if year is None:
+                pass
+            elif year != movie.year:
+                goes_into_list = False
+                continue
+
+            for search_actor in actors:
+                actor_in = False
+                for actor in movie.actors:
+                    if search_actor.lower() in actor.actor_full_name.lower():
+                        actor_in = True
                         break
-                for actor in mov.actors:
-                    if elem in actor.actor_full_name.lower():
-                        elem_found_a_home = True
-                        break
-                if elem_found_a_home == False:
+                if actor_in == False:
                     goes_into_list = False
-                    break
+
+            for search_genre in genres:
+                genre_in = False
+                for genre in movie.genres:
+                    if search_genre.lower() in genre.genre_name.lower():
+                        genre_in = True
+                        break
+                if genre_in == False:
+                    goes_into_list = False
+
+            #print(goes_into_list, movie)
             if goes_into_list:
-                movies.append(mov)
+                movies.append(movie)
+
         return movies
 
     def browse_processing(self, movies_list):

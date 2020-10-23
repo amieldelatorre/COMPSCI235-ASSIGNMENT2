@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c8ad7c75-b1a8-42ff-bb9b-ababcc7db07d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/adapters/memory_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/adapters/memory_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/adapters/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/adapters/repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/browse/browse.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/browse/browse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/flix/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/templates/movies/browse.html" beforeDir="false" afterPath="$PROJECT_DIR$/flix/templates/movies/browse.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/e2e/test_web_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/e2e/test_web_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +51,29 @@
       <recent name="C:\Users\Amiel\Desktop\projects\uni\CS235FlixSkeleton\domainmodel" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_web_app.test_access_to_profile">
-    <configuration name="pytest for test_web_app.test_access_to_profile" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for test_web_app.test_browse_with_parameters">
+    <configuration name="wsgi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="COMPSCI235-ASSIGNMENT2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wsgi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_web_app.test_browse_no_parameters" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="COMPSCI235-ASSIGNMENT2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -59,11 +85,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_web_app.test_access_to_profile&quot;" />
+      <option name="_new_target" value="&quot;test_web_app.test_browse_no_parameters&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_web_app.test_access_to_watch_list" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_web_app.test_browse_with_parameters" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="COMPSCI235-ASSIGNMENT2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,11 +101,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_web_app.test_access_to_watch_list&quot;" />
+      <option name="_new_target" value="&quot;test_web_app.test_browse_with_parameters&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_web_app.test_add_to_watch_list" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_web_app.test_review" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="COMPSCI235-ASSIGNMENT2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -91,11 +117,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_web_app.test_add_to_watch_list&quot;" />
+      <option name="_new_target" value="&quot;test_web_app.test_review&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_web_app.test_add_to_watchlist_without_login" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_web_app.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="COMPSCI235-ASSIGNMENT2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -107,24 +133,8 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_web_app.test_add_to_watchlist_without_login&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_web_app.test_login_required_to_access_profile" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="COMPSCI235-ASSIGNMENT2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/e2e" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_web_app.test_login_required_to_access_profile&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/e2e/test_web_app.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest" type="tests" factoryName="py.test" nameIsGenerated="true">
@@ -145,19 +155,19 @@
     </configuration>
     <list>
       <item itemvalue="Python tests.pytest" />
-      <item itemvalue="Python tests.pytest for test_web_app.test_access_to_watch_list" />
-      <item itemvalue="Python tests.pytest for test_web_app.test_add_to_watchlist_without_login" />
-      <item itemvalue="Python tests.pytest for test_web_app.test_add_to_watch_list" />
-      <item itemvalue="Python tests.pytest for test_web_app.test_login_required_to_access_profile" />
-      <item itemvalue="Python tests.pytest for test_web_app.test_access_to_profile" />
+      <item itemvalue="Python tests.pytest in test_web_app.py" />
+      <item itemvalue="Python tests.pytest for test_web_app.test_review" />
+      <item itemvalue="Python.wsgi" />
+      <item itemvalue="Python tests.pytest for test_web_app.test_browse_with_parameters" />
+      <item itemvalue="Python tests.pytest for test_web_app.test_browse_no_parameters" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_web_app.test_access_to_profile" />
-        <item itemvalue="Python tests.pytest for test_web_app.test_login_required_to_access_profile" />
-        <item itemvalue="Python tests.pytest for test_web_app.test_add_to_watch_list" />
-        <item itemvalue="Python tests.pytest for test_web_app.test_add_to_watchlist_without_login" />
-        <item itemvalue="Python tests.pytest for test_web_app.test_access_to_watch_list" />
+        <item itemvalue="Python tests.pytest for test_web_app.test_browse_with_parameters" />
+        <item itemvalue="Python tests.pytest for test_web_app.test_browse_no_parameters" />
+        <item itemvalue="Python.wsgi" />
+        <item itemvalue="Python tests.pytest in test_web_app.py" />
+        <item itemvalue="Python tests.pytest for test_web_app.test_review" />
       </list>
     </recent_temporary>
   </component>
@@ -204,33 +214,33 @@
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598450728763" />
     <state x="2660" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599371422536" />
     <state x="740" y="285" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603457274727" />
-    <state width="1899" height="255" key="GridCell.Tab.0.bottom" timestamp="1603460936453">
+    <state width="1899" height="255" key="GridCell.Tab.0.bottom" timestamp="1603468057751">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603460936453" />
+    <state width="1899" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603468057751" />
     <state width="1899" height="244" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
-    <state width="1899" height="255" key="GridCell.Tab.0.center" timestamp="1603460936452">
+    <state width="1899" height="255" key="GridCell.Tab.0.center" timestamp="1603468057751">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="255" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603460936452" />
+    <state width="1899" height="255" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603468057751" />
     <state width="1899" height="244" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
-    <state width="1899" height="255" key="GridCell.Tab.0.left" timestamp="1603460936452">
+    <state width="1899" height="255" key="GridCell.Tab.0.left" timestamp="1603468057751">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="255" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603460936452" />
+    <state width="1899" height="255" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603468057751" />
     <state width="1899" height="244" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
-    <state width="1899" height="255" key="GridCell.Tab.0.right" timestamp="1603460936453">
+    <state width="1899" height="255" key="GridCell.Tab.0.right" timestamp="1603468057751">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="255" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603460936453" />
+    <state width="1899" height="255" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603468057751" />
     <state width="1899" height="244" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
     <state width="1899" height="363" key="GridCell.Tab.1.bottom" timestamp="1603452344496">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -261,16 +271,16 @@
     </state>
     <state x="1939" y="0" width="1415" height="1028" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599196962544" />
     <state x="2189" y="198" width="1502" height="710" key="dock-window-1/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603460050100" />
-    <state x="1922" y="0" width="1502" height="710" maximized="true" key="dock-window-2" timestamp="1603460063914">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="315" y="-8" width="1502" height="710" maximized="true" key="dock-window-2" timestamp="1603467643486">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="303" y="12" width="1415" height="1007" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599200258584" />
-    <state x="1922" y="0" width="1502" height="710" maximized="true" key="dock-window-2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603460063914" />
-    <state x="1920" y="0" width="1510" height="795" maximized="true" key="dock-window-3" timestamp="1603265772628">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="315" y="-8" width="1502" height="710" maximized="true" key="dock-window-2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603467643486" />
+    <state x="603" y="284" width="1502" height="710" key="dock-window-3" timestamp="1603463211853">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1920" y="0" width="1415" height="706" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599206569527" />
-    <state x="1920" y="0" width="1510" height="795" maximized="true" key="dock-window-3/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603265772628" />
+    <state x="603" y="284" width="1502" height="710" key="dock-window-3/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603463211853" />
     <state x="2164" y="107" width="1510" height="795" key="dock-window-4" timestamp="1603273878570">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
