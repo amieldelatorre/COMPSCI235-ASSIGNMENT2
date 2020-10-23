@@ -23,11 +23,20 @@
 
       <p><strong>Director:</strong> <a href="{{links[2][movie.director.director_full_name]}}">{{movie.director.director_full_name}}</a></p>
       <p class="movie-page-description"><strong>Description:</strong> {{movie.description}}</p>
+
+      <button class="btn-prev" onclick="location.href='{{watch_url}}'">Watch Movie</button>
+      <button class="btn-prev" onclick="location.href='{{add_to_watchlist_url}}'">Add to Watch List</button>
+
       </div>
     </div>
 
 <div class="bottom-section">
-  {% if 'username' in session %}
+
+  {% if page_type == 'view_movie' %}
+  <button class="search-btn" onclick="location.href='{{handler_url}}'">Leave a Review</button>
+  {% endif %}
+
+  {% if 'username' in session and page_type == 'review_movie'%}
   <div class="review-section">
     <form action="{{handler_url}}" method="post">
       {{form.movie}} <!-- Need to include this hidden field as it tracks the article being commented. -->

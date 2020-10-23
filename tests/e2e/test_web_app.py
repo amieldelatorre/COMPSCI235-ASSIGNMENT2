@@ -68,13 +68,11 @@ def test_review(in_memory_repo, client, auth):
     auth.login()
 
     # Check that we can retrieve the comment page.
-    response = client.get('/movie?movie_name=Trust&movie_year=2010')
-
-    movie = in_memory_repo.find_movie_by_title_and_year('Trust', 2010)
+    response = client.get('/review_movie?movie_name=Trust&movie_year=2010')
 
     response = client.post(
-        '/movie?movie_name=Trust&movie_year=2010',
-        data={'review': 'Wonderful', 'movie': movie, 'rating': 7}
+        '/review_movie?movie_name=Trust&movie_year=2010',
+        data={'review': 'Wonderful', 'movie': '254', 'rating': 7}
     )
     assert response.headers['Location'] == 'http://localhost/movie?movie_name=Trust&movie_year=2010'
 
@@ -94,8 +92,8 @@ def test_review_with_invalid_input(in_memory_repo, client, auth, review, rating,
 
     # Attempt to comment on an article.
     response = client.post(
-        '/movie?movie_name=Trust&movie_year=2010',
-        data={'review': review, 'rating': rating, 'movie': movie}
+        '/review_movie?movie_name=Trust&movie_year=2010',
+        data={'review': review, 'movie': '254', 'rating': rating}
     )
     # Check that supplying invalid comment text generates appropriate error messages.
     for message in messages:

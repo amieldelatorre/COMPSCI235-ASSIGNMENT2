@@ -26,8 +26,6 @@
   {% if next_movie_url is not none %}
   <button class="btn-next" onclick="location.href='{{next_movie_url}}'">Next</button>
   {% endif %}
-
-
 </div>
   <div class="search-results">
   {% for movie in movies.keys()%}

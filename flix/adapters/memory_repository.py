@@ -116,6 +116,9 @@ class MemoryRepository(AbstractRepository):
         to_return = self._movies[index]
         return to_return
 
+    def find_movie_index(self, movie: Movie):
+        return self._movies.index(movie)
+
 
 def read_csv_file(filename: str):
     with open(filename, encoding='utf-8-sig') as infile:

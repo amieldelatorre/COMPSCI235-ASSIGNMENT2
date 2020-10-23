@@ -1,0 +1,88 @@
+{% extends 'layout.html' %} {% block content %}
+<main id="main">
+    <div class="movie">
+
+    <h2 class="movie-page-title">{{user.user_name}}</h2>
+    <div class="photo">
+      <img class="movie-page-image" alt="blank person image" src="{{ url_for('static', filename='blank_user.jpg') }}">
+    </div>
+    <div class="movie-info">
+      <p><strong>Time spent watching movies: </strong>{{user.time_spent_watching_movies_minutes}} minute(s)</p>
+      <p><strong>Amount of Movies Watched (including duplicates): </strong>{{user.watched_movies|length}} movie(s)</p>
+      <p><strong>Amount of Movies in Watchlist: </strong>{{user.watchlist.size}} movie(s)</p>
+      <p><strong>Amount of Movies Reviewed: </strong>{{user.reviews|length}} review(s)</p>
+
+      <button class="btn-prev" onclick="location.href='{{url_for('user_bp.watchlist')}}'">Watch List</button>
+      <button class="btn-prev" onclick="location.href='{{url_for('user_bp.movies_watched')}}'">Watched Movies</button>
+      </div>
+    </div>
+
+    {% if movies is not none %}
+    <div class="bottom-section">
+                {% if heading is not none %}
+                <h2 class="movie-page-title">{{heading}}</h2>
+                {% endif %}
+
+
+                <div class="search-btns">
+              {% if first_movie_url is not none %}
+              <button class="btn-prev" onclick="location.href='{{first_movie_url}}'">First</button>
+              {% endif %}
+
+              {% if prev_movie_url is not none %}
+              <button class="btn-prev" onclick="location.href='{{prev_movie_url}}'">Prev</button>
+              {% endif %}
+
+              {% if last_movie_url is not none %}
+              <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
+              {% endif %}
+
+              {% if next_movie_url is not none %}
+              <button class="btn-next" onclick="location.href='{{next_movie_url}}'">Next</button>
+              {% endif %}
+            </div>
+              <div class="search-results">
+              {% for movie in movies.keys()%}
+              <div class="movie-search">
+                <a href="{{movies[movie]}}">
+                  {% if movie.poster_link is none%}
+                  <img class="result-img" alt="{{movie.title}}" src="{{ url_for('static', filename='blankimg.jpg') }}">
+                  {% else %}
+                  <img class="result-img" alt="{{movie.title}}" src="{{movie.poster_link}}">
+                  {% endif %}
+            <h3>{{movie.title}}</h3>
+                </a>
+              <p>{{movie.description}}</p>
+                </div>
+            {% endfor %}
+            </div>
+
+              <div class="search-btns">
+              {% if first_movie_url is not none %}
+              <button class="btn-prev" onclick="location.href='{{first_movie_url}}'">First</button>
+              {% endif %}
+
+              {% if prev_movie_url is not none %}
+              <button class="btn-prev" onclick="location.href='{{prev_movie_url}}'">Prev</button>
+              {% endif %}
+
+               {% if last_movie_url is not none %}
+              <button class="btn-next" onclick="location.href='{{last_movie_url}}'">Last</button>
+              {% endif %}
+
+              {% if next_movie_url is not none %}
+              <button class="btn-next" onclick="location.href='{{next_movie_url}}'">Next</button>
+              {% endif %}
+
+
+              </div>
+
+
+    </div>
+    {% endif %}
+
+</main>
+
+
+
+{% endblock %}

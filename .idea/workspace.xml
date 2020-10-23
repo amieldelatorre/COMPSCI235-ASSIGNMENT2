@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8ad7c75-b1a8-42ff-bb9b-ababcc7db07d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/flix/user/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flix/user/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flix/utilities/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/utilities/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/adapters/memory_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/adapters/memory_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/adapters/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/adapters/repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/browse/browse.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/browse/browse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/domainmodel/test_extentions.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/domainmodel/test_extentions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/domainmodel/test_mandatory_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/domainmodel/test_mandatory_classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/flix/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/templates/movies/browse.html" beforeDir="false" afterPath="$PROJECT_DIR$/flix/templates/movies/browse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/templates/movies/movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/flix/templates/movies/movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/flix/templates/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/e2e/test_web_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/e2e/test_web_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -30,20 +42,20 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/unit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/flix/user" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\tests" />
-      <recent name="C:\Users\Amiel\Desktop\projects\uni\CS235FlixSkeleton\datafiles" />
-      <recent name="C:\Users\Amiel\Desktop\projects\uni\CS235FlixSkeleton\domainmodel" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\flix\user" />
       <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\tests\unit" />
       <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\flix\datafiles" />
       <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\tests\data" />
       <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\flix\browse" />
-      <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\flix" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\tests" />
+      <recent name="C:\Users\Amiel\Desktop\projects\uni\CS235FlixSkeleton\datafiles" />
+      <recent name="C:\Users\Amiel\Desktop\projects\uni\CS235FlixSkeleton\domainmodel" />
     </key>
   </component>
   <component name="RunManager" selected="Python.wsgi">
@@ -68,39 +80,39 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_services.test_authentication_with_valid_credentials" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_web_app.test_review" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="COMPSCI235-ASSIGNMENT2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/e2e" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_services.test_authentication_with_valid_credentials&quot;" />
+      <option name="_new_target" value="&quot;test_web_app.test_review&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_services.test_can_add_user" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_web_app.test_review_with_invalid_input" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="COMPSCI235-ASSIGNMENT2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/e2e" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_services.test_can_add_user&quot;" />
+      <option name="_new_target" value="&quot;test_web_app.test_review_with_invalid_input&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_services.test_cannot_add_user_with_existing_name" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_memory_repository.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="COMPSCI235-ASSIGNMENT2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -112,23 +124,23 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_services.test_cannot_add_user_with_existing_name&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/unit/test_memory_repository.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_services.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_web_app.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="COMPSCI235-ASSIGNMENT2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/e2e" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/unit/test_services.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/e2e/test_web_app.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -149,20 +161,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.pytest" />
-      <item itemvalue="Python tests.pytest for test_services.test_can_add_user" />
-      <item itemvalue="Python tests.pytest for test_services.test_cannot_add_user_with_existing_name" />
-      <item itemvalue="Python tests.pytest for test_services.test_authentication_with_valid_credentials" />
-      <item itemvalue="Python tests.pytest in test_services.py" />
       <item itemvalue="Python.wsgi" />
+      <item itemvalue="Python tests.pytest" />
+      <item itemvalue="Python tests.pytest in test_memory_repository.py" />
+      <item itemvalue="Python tests.pytest in test_web_app.py" />
+      <item itemvalue="Python tests.pytest for test_web_app.test_review" />
+      <item itemvalue="Python tests.pytest for test_web_app.test_review_with_invalid_input" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.wsgi" />
-        <item itemvalue="Python tests.pytest in test_services.py" />
-        <item itemvalue="Python tests.pytest for test_services.test_authentication_with_valid_credentials" />
-        <item itemvalue="Python tests.pytest for test_services.test_cannot_add_user_with_existing_name" />
-        <item itemvalue="Python tests.pytest for test_services.test_can_add_user" />
+        <item itemvalue="Python tests.pytest in test_web_app.py" />
+        <item itemvalue="Python tests.pytest for test_web_app.test_review_with_invalid_input" />
+        <item itemvalue="Python tests.pytest for test_web_app.test_review" />
+        <item itemvalue="Python tests.pytest in test_memory_repository.py" />
       </list>
     </recent_temporary>
   </component>
@@ -202,74 +214,74 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="827" y="295" key="EnvironmentVariablesDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1601982321138" />
-    <state x="740" y="285" key="FileChooserDialogImpl" timestamp="1603258621938">
+    <state x="740" y="285" key="FileChooserDialogImpl" timestamp="1603440012091">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598450728763" />
     <state x="2660" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599371422536" />
-    <state x="740" y="285" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603258621938" />
-    <state width="1899" height="244" key="GridCell.Tab.0.bottom" timestamp="1603281629270">
+    <state x="740" y="285" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603440012091" />
+    <state width="1899" height="329" key="GridCell.Tab.0.bottom" timestamp="1603450541483">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="244" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603281629270" />
+    <state width="1899" height="329" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603450541483" />
     <state width="1899" height="244" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
-    <state width="1899" height="244" key="GridCell.Tab.0.center" timestamp="1603281629269">
+    <state width="1899" height="329" key="GridCell.Tab.0.center" timestamp="1603450541483">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="244" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603281629269" />
+    <state width="1899" height="329" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603450541483" />
     <state width="1899" height="244" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
-    <state width="1899" height="244" key="GridCell.Tab.0.left" timestamp="1603281629269">
+    <state width="1899" height="329" key="GridCell.Tab.0.left" timestamp="1603450541483">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="244" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603281629269" />
+    <state width="1899" height="329" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603450541483" />
     <state width="1899" height="244" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
-    <state width="1899" height="244" key="GridCell.Tab.0.right" timestamp="1603281629270">
+    <state width="1899" height="329" key="GridCell.Tab.0.right" timestamp="1603450541483">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="244" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603281629270" />
+    <state width="1899" height="329" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603450541483" />
     <state width="1899" height="244" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
-    <state width="1899" height="363" key="GridCell.Tab.1.bottom" timestamp="1603280833449">
+    <state width="1899" height="363" key="GridCell.Tab.1.bottom" timestamp="1603445158463">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599198850322" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598260005953" />
-    <state width="1899" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603280833449" />
-    <state width="1899" height="363" key="GridCell.Tab.1.center" timestamp="1603280833449">
+    <state width="1899" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603445158463" />
+    <state width="1899" height="363" key="GridCell.Tab.1.center" timestamp="1603445158463">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599198850322" />
     <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598260005953" />
-    <state width="1899" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603280833449" />
-    <state width="1899" height="363" key="GridCell.Tab.1.left" timestamp="1603280833449">
+    <state width="1899" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603445158463" />
+    <state width="1899" height="363" key="GridCell.Tab.1.left" timestamp="1603445158463">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599198850322" />
     <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598260005953" />
-    <state width="1899" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603280833449" />
-    <state width="1899" height="363" key="GridCell.Tab.1.right" timestamp="1603280833449">
+    <state width="1899" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603445158463" />
+    <state width="1899" height="363" key="GridCell.Tab.1.right" timestamp="1603445158463">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599198850322" />
     <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598260005953" />
-    <state width="1899" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603280833449" />
-    <state x="1920" y="0" width="1510" height="795" key="dock-window-1" timestamp="1603264125688">
+    <state width="1899" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603445158463" />
+    <state x="1944" y="249" width="1506" height="710" maximized="true" key="dock-window-1" timestamp="1603449857937">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="1939" y="0" width="1415" height="1028" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599196962544" />
-    <state x="1920" y="0" width="1510" height="795" key="dock-window-1/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603264125688" />
-    <state x="175" y="275" width="1510" height="795" key="dock-window-2" timestamp="1603267439422">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="1944" y="249" width="1506" height="710" maximized="true" key="dock-window-1/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603449857937" />
+    <state x="2276" y="64" width="1915" height="1067" key="dock-window-2" timestamp="1603449125468">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="303" y="12" width="1415" height="1007" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599200258584" />
-    <state x="175" y="275" width="1510" height="795" key="dock-window-2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603267439422" />
+    <state x="2276" y="64" width="1915" height="1067" key="dock-window-2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603449125468" />
     <state x="1920" y="0" width="1510" height="795" maximized="true" key="dock-window-3" timestamp="1603265772628">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

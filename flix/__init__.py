@@ -39,4 +39,7 @@ def create_app(test_config=None):
         from .browse import browse
         app.register_blueprint(browse.browse_blueprint)
 
+        from .user import user
+        app.register_blueprint(user.user_blueprint)
+
     return app

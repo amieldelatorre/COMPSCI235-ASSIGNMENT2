@@ -1,8 +1,11 @@
 <nav id="nav">
+  {% if 'username' in session %}
+  <a class="btn-nav" href="{{ url_for('user_bp.profile') }}">
   <h2 id="nav-header">
-    {% if 'username' in session %} Hello, {{ session['username'] }} {%
-    endif %}
+     Hello, {{ session['username'] }}
   </h2>
+  </a>
+  {% endif %}
   <a class="btn-nav" href="{{ url_for('home_bp.home') }}">Home</a>
   <a class="btn-nav" href="{{ url_for('browse_bp.browse') }}">Browse</a>
   {% if 'username' not in session %}
@@ -11,6 +14,8 @@
   {% endif %}
 
   {% if 'username' in session %}
+  <a class="btn-nav" href="{{ url_for('user_bp.profile') }}">User Profile</a>
+  <a class="btn-nav" href="{{ url_for('user_bp.watchlist') }}">Watch List</a>
   <a class="btn-nav" href="{{ url_for('authentication_bp.logout') }}">Logout</a>
   {% endif %}
 <!--

@@ -94,6 +94,10 @@ class AbstractRepository(abc.ABC):
         """ Will find a movie by title and year """
         raise NotImplementedError
 
+    def find_movie_index(self, movie: Movie):
+        """ Will use a movie object to find it's index """
+        raise NotImplementedError
+
 
 
 

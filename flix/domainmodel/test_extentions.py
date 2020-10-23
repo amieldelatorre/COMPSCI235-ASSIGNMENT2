@@ -1,13 +1,13 @@
-from domainmodel.movie import Movie
-from domainmodel.review import Review
-from domainmodel.director import Director
-from domainmodel.genre import Genre
-from domainmodel.user import User
-from domainmodel.watchlist import WatchList
-from domainmodel.actor import Actor
-from activitysimulations.watchingsimulation import MovieWatchingSimulation
+from flix.domainmodel.movie import Movie
+from flix.domainmodel.review import Review
+from flix.domainmodel.director import Director
+from flix.domainmodel.genre import Genre
+from flix.domainmodel.user import User
+from flix.domainmodel.watchlist import WatchList
+from flix.domainmodel.actor import Actor
+from flix.activitysimulations.watchingsimulation import MovieWatchingSimulation
 import pytest
-from datafilereaders.movie_file_csv_reader import MovieFileCSVReader
+from flix.datafilereaders.movie_file_csv_reader import MovieFileCSVReader
 
 
 class TestWatchlistMethods:

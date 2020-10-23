@@ -3,6 +3,7 @@ from flask import request, redirect, url_for, session
 import flix.utilities.utilities as utilities
 import flix.utilities.services as services
 import flix.adapters.repository as repo
+from flix.authentication.authentication import login_required
 
 from better_profanity import profanity
 from flask_wtf import FlaskForm
@@ -77,7 +78,6 @@ def movie_search():
 
 @browse_blueprint.route('/movie', methods=['GET', 'POST'])
 def movie():
-    form = ReviewForm()
 
     try:
         title = request.args.get('movie_name')
@@ -104,25 +104,66 @@ def movie():
     director_dict[mov.director.director_full_name] = url_for('browse_bp.movie_search', search=mov.director.director_full_name)
     search_list_of_dict.append(director_dict)
 
-    form.movie = mov
+    return render_template('movies/movie.html',
+                           movie=mov,
+                           poster_link=poster_link,
+                           links=search_list_of_dict,
+                           handler_url=url_for('browse_bp.review', movie_name=mov.title, movie_year=mov.year),
+                           page_type='view_movie',
+                           watch_url=url_for('user_bp.watch', movie_name=mov.title, movie_year=mov.year),
+                           add_to_watchlist_url=url_for('user_bp.add_to_watchlist', movie_name=mov.title, movie_year=mov.year),
+                           remove_from_watchlist_url=url_for('user_bp.add_to_watchlist', movie_name=mov.title, movie_year=mov.year)
+                           )
+
+
+@browse_blueprint.route('/review_movie', methods=['GET', 'POST'])
+@login_required
+def review():
+    form = ReviewForm()
+
     try:
-        username = session['username']
+        title = request.args.get('movie_name')
+        year = int(request.args.get('movie_year'))
+    except:
+        return redirect(url_for('home_bp.home'))
+    mov = repo.repo_instance.find_movie_by_title_and_year(title, year)
+    # print(title,year,mov)
+    poster_link = services.get_movie_poster(mov)
 
-        if repo.repo_instance.get_user(username) is not None:
-            if form.validate_on_submit():
-                services.add_review(form.movie, form.review.data, form.rating.data, username, repo.repo_instance)
+    search_list_of_dict = list()
+    # indexes = 0 --> genres, 1 --> actors,3 --> director
+    genre_dict = {}
+    actor_dict = {}
+    director_dict = {}
+    for genre in mov.genres:
+        genre_dict[genre.genre_name] = url_for('browse_bp.movie_search', search=genre.genre_name)
+    search_list_of_dict.append(genre_dict)
 
-                return redirect(url_for('browse_bp.movie', movie_name=form.movie.title, movie_year=form.movie.year))
-    except KeyError:
-        pass
+    for actor in mov.actors:
+        actor_dict[actor.actor_full_name] = url_for('browse_bp.movie_search', search=actor.actor_full_name)
+    search_list_of_dict.append(actor_dict)
 
+    director_dict[mov.director.director_full_name] = url_for('browse_bp.movie_search',
+                                                             search=mov.director.director_full_name)
+    search_list_of_dict.append(director_dict)
+
+    form.movie.data = repo.repo_instance.find_movie_index(mov)
+    username = session['username']
+
+    if repo.repo_instance.get_user(username) is not None:
+        if form.validate_on_submit():
+            form_movie = repo.repo_instance.get_movies_by_index(int(form.movie.data))
+            services.add_review(form_movie, form.review.data, form.rating.data, username, repo.repo_instance)
+
+            return redirect(url_for('browse_bp.movie', movie_name=form_movie.title, movie_year=form_movie.year))
 
     return render_template('movies/movie.html',
                            movie=mov,
                            poster_link=poster_link,
                            links=search_list_of_dict,
                            form=form,
-                           handler_url=url_for('browse_bp.movie', movie_name=mov.title, movie_year=mov.year)
+                           handler_url=url_for('browse_bp.review', movie_name=mov.title, movie_year=mov.year),
+                           page_type='review_movie'
                            )
 
 
