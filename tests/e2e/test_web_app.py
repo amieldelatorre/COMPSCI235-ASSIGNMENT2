@@ -63,6 +63,11 @@ def test_index(client):
     assert b'CS235Flix' in response.data
 
 
+def test_login_required_to_review(client):
+    response = client.post('/review_movie')
+    assert response.headers['Location'] == 'http://localhost/authentication/login'
+
+
 def test_review(in_memory_repo, client, auth):
     # Login a user.
     auth.login()
@@ -138,4 +143,53 @@ def test_browse_no_parameters(client):
 def test_browse_with_parameters(client):
     response = client.get('/movie_search?search=action%2C+x-men%2C+hugh%2C+bryan+singer')
     assert b'X-Men: Days of Future Past' in response.data
-    assert b'The X-Men send Wolverine to the past in a desperate effort to change history and prevent an event that results in doom for both humans and mutants.' in response.data
+    assert b'The X-Men send Wolverine to the past in a desperate effort to change history and prevent an event that ' \
+           b'results in doom for both humans and mutants.' in response.data
+
+
+def test_login_required_to_watch(client):
+    response = client.get('/watch?movie_name=Guardians+of+the+Galaxy&movie_year=2014')
+    assert response.headers['Location'] == 'http://localhost/authentication/login'
+
+
+def test_add_to_watched_movies(client, in_memory_repo, auth):
+    auth.login()
+
+    response = client.get('/watch?movie_name=Guardians+of+the+Galaxy&movie_year=2014')
+    assert response.headers['Location'] == 'http://localhost/movies_watched'
+
+
+def test_login_required_for_watchlist(client):
+    response = client.get('/watchlist')
+    assert response.headers['Location'] == 'http://localhost/authentication/login'
+
+
+def test_access_to_watch_list(client, auth):
+    auth.login()
+    response = client.get('/watchlist')
+    assert b'Watch List' in response.data
+
+
+def test_login_required_to_add_to_watch_list(client):
+    response = client.get('/add_to_watchlist')
+    assert response.headers['Location'] == 'http://localhost/authentication/login'
+
+
+def test_add_to_watch_list(client, in_memory_repo, auth):
+    auth.login()
+
+    response = client.get('/add_to_watchlist?movie_name=Guardians+of+the+Galaxy&movie_year=2014')
+    assert response.headers['Location'] == 'http://localhost/watchlist'
+
+
+def test_login_required_to_access_profile(client):
+    response = client.get('/profile')
+    assert response.headers['Location'] == 'http://localhost/authentication/login'
+
+
+def test_access_to_profile(client, auth):
+    auth.login()
+    response = client.get('/profile')
+
+    assert b'thorke' in response.data
+    assert b'Amount of Movies Watched (including duplicates): </strong>0 movie(s)</p>\n ' in response.data
