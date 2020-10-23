@@ -93,6 +93,7 @@ def movie():
     genre_dict = {}
     actor_dict = {}
     director_dict = {}
+    year_dict = {}
     for genre in mov.genres:
         genre_dict[genre.genre_name] = url_for('browse_bp.movie_search',  search=genre.genre_name)
     search_list_of_dict.append(genre_dict)
@@ -103,6 +104,9 @@ def movie():
 
     director_dict[mov.director.director_full_name] = url_for('browse_bp.movie_search', search=mov.director.director_full_name)
     search_list_of_dict.append(director_dict)
+
+    year_dict[mov.year] = url_for('browse_bp.movie_search', search=mov.year)
+    search_list_of_dict.append(year_dict)
 
     return render_template('movies/movie.html',
                            movie=mov,

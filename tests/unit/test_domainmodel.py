@@ -100,7 +100,6 @@ class TestUserMethods:
         assert repr(user.watchlist.movies[0]) == "<Movie Moana, 2016>"
 
 
-
 class TestDirectorMethods:
 
     def test_init(self):

@@ -73,9 +73,24 @@ def test_repository_does_not_retrieve_an_review_when_there_are_no_reviews_for_qu
 
 
 def test_repository_retrieves_movies_on_a_search(in_memory_repo):
-    movies = in_memory_repo.browse_movies(['action'])
-    assert len(movies) == 303
+    movies1 = in_memory_repo.browse_movies(['action'])
+    assert len(movies1) == 303
 
+    movies2 = in_memory_repo.browse_movies(['angelina jolie'])
+    assert len(movies2) == 8
+
+    movies3 = in_memory_repo.browse_movies(['Ron Clements'])
+    assert len(movies3) == 2
+
+    movies4 = in_memory_repo.browse_movies(['2012'])
+    assert len(movies4) == 65
+
+    movies5 = in_memory_repo.browse_movies(['Guardians'])
+    assert len(movies5) == 1
+
+    movies6 = in_memory_repo.browse_movies((['G.I. Joe: Retaliation', 'Action', 'Adventure', 'Sci-Fi', 'Jon M. Chu',
+                                             'Channing Tatum', "Dwayne Johnson", '2013']))
+    assert len(movies6) == 1
 
 def test_repository_gets_movies_with_index_list(in_memory_repo):
     movies = in_memory_repo.get_movies_by_index_list([0, 5, 13])
@@ -94,6 +109,11 @@ def test_repository_does_not_retrieve_for_nonexistent_index(in_memory_repo):
 def test_repository_does_not_retrieve_for_nonexistent_indices(in_memory_repo):
     movies = in_memory_repo.get_movies_by_index_list([1001, 1002])
     assert len(movies) == 0
+
+
+def test_repository_can_find_index_of_movie(in_memory_repo):
+    movie_index = in_memory_repo.find_movie_index(Movie("Guardians of the Galaxy", 2014))
+    assert movie_index == 0
 
 
 def test_repo_can_add_movie_poster_link_and_is_a_dict(in_memory_repo):

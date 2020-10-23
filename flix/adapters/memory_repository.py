@@ -78,6 +78,13 @@ class MemoryRepository(AbstractRepository):
             for elem in search_param_list:
                 elem = elem.lower()
                 elem_found_a_home = False
+                try:
+                    elem_as_num = int(elem)
+                    if elem_as_num == mov.year:
+                        elem_found_a_home = True
+                        continue
+                except:
+                    pass
                 if elem in mov.title.lower():
                     elem_found_a_home = True
                     continue
@@ -93,7 +100,7 @@ class MemoryRepository(AbstractRepository):
                         elem_found_a_home = True
                         break
                 if elem_found_a_home == False:
-                    goes_into_list = False;
+                    goes_into_list = False
                     break
             if goes_into_list:
                 movies.append(mov)
