@@ -124,18 +124,29 @@ def movie():
     director_dict = {}
     year_dict = {}
     for genre in mov.genres:
-        genre_dict[genre.genre_name] = url_for('browse_bp.movie_search',  search=genre.genre_name)
+        genre_dict[genre.genre_name] = url_for('browse_bp.movie_search', movie_title=None, movie_year=None,
+                                 movie_director=None, movie_genres=[genre.genre_name], movie_actors=[], submit='Submit')
     search_list_of_dict.append(genre_dict)
 
     for actor in mov.actors:
-        actor_dict[actor.actor_full_name] = url_for('browse_bp.movie_search', search=actor.actor_full_name)
+        actor_dict[actor.actor_full_name] = url_for('browse_bp.movie_search', movie_title=None, movie_year=None,
+                                 movie_director=None, movie_genres=[], movie_actors=[actor.actor_full_name], submit='Submit')
     search_list_of_dict.append(actor_dict)
 
-    director_dict[mov.director.director_full_name] = url_for('browse_bp.movie_search', search=mov.director.director_full_name)
+    director_dict[mov.director.director_full_name] = url_for('browse_bp.movie_search', movie_title=None, movie_year=None,
+                                 movie_director=mov.director.director_full_name, movie_genres=[], movie_actors=[],
+                                                             submit='Submit')
     search_list_of_dict.append(director_dict)
 
-    year_dict[mov.year] = url_for('browse_bp.movie_search', search=mov.year)
+    year_dict[mov.year] = url_for('browse_bp.movie_search', movie_title=None, movie_year=mov.year,
+                                 movie_director=None, movie_genres=[], movie_actors=[],
+                                                             submit='Submit')
     search_list_of_dict.append(year_dict)
+
+    watchlist = None
+    if 'username' in session:
+        username = session['username']
+        watchlist = repo.repo_instance.get_user(username).watchlist
 
     return render_template('movies/movie.html',
                            movie=mov,
@@ -145,7 +156,8 @@ def movie():
                            page_type='view_movie',
                            watch_url=url_for('user_bp.watch', movie_name=mov.title, movie_year=mov.year),
                            add_to_watchlist_url=url_for('user_bp.add_to_watchlist', movie_name=mov.title, movie_year=mov.year),
-                           remove_from_watchlist_url=url_for('user_bp.add_to_watchlist', movie_name=mov.title, movie_year=mov.year)
+                           remove_from_watchlist_url=url_for('user_bp.remove_from_watchlist', movie_name=mov.title, movie_year=mov.year),
+                           watchlist=watchlist
                            )
 
 
@@ -186,6 +198,7 @@ def review():
 
     form.movie.data = repo.repo_instance.find_movie_index(mov)
     username = session['username']
+    watchlist = repo.repo_instance.get_user(username).watchlist.movies
 
     if repo.repo_instance.get_user(username) is not None:
         if form.validate_on_submit():
@@ -200,7 +213,8 @@ def review():
                            links=search_list_of_dict,
                            form=form,
                            handler_url=url_for('browse_bp.review', movie_name=mov.title, movie_year=mov.year),
-                           page_type='review_movie'
+                           page_type='review_movie',
+                           watchlist=watchlist
                            )
 
 

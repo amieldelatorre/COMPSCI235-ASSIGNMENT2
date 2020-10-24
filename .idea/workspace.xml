@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c8ad7c75-b1a8-42ff-bb9b-ababcc7db07d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/test_memory_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_memory_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/browse/browse.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/browse/browse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/templates/movies/movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/flix/templates/movies/movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/user/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix/user/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/e2e/test_web_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/e2e/test_web_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../COMPSCI-235" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\tests" />
+      <recent name="C:\Users\Amiel\Desktop\projects\uni\CS235FlixSkeleton\datafiles" />
+      <recent name="C:\Users\Amiel\Desktop\projects\uni\CS235FlixSkeleton\domainmodel" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\flix\user" />
       <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\tests\unit" />
@@ -40,67 +48,9 @@
       <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\tests\data" />
       <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\flix\browse" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Amiel\Desktop\projects\uni\COMPSCI235-ASSIGNMENT2\tests" />
-      <recent name="C:\Users\Amiel\Desktop\projects\uni\CS235FlixSkeleton\datafiles" />
-      <recent name="C:\Users\Amiel\Desktop\projects\uni\CS235FlixSkeleton\domainmodel" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_memory_repository.test_repository_retrieves_movies_on_a_search">
-    <configuration name="wsgi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="COMPSCI235-ASSIGNMENT2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wsgi.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_memory_repository.test_repository_does_not_retrieve_an_review_when_there_are_no_reviews_for_query" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="COMPSCI235-ASSIGNMENT2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/unit" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_memory_repository.test_repository_does_not_retrieve_an_review_when_there_are_no_reviews_for_query&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_memory_repository.test_repository_retrieves_movies_on_a_search" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="COMPSCI235-ASSIGNMENT2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/unit" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_memory_repository.test_repository_retrieves_movies_on_a_search&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_web_app.test_browse_no_parameters" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest in test_web_app.py">
+    <configuration name="pytest for test_web_app.test_add_to_watch_list" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="COMPSCI235-ASSIGNMENT2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -112,11 +62,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_web_app.test_browse_no_parameters&quot;" />
+      <option name="_new_target" value="&quot;test_web_app.test_add_to_watch_list&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_web_app.test_browse_with_parameters" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_web_app.test_add_to_watched_movies" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="COMPSCI235-ASSIGNMENT2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -128,8 +78,56 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_web_app.test_browse_with_parameters&quot;" />
+      <option name="_new_target" value="&quot;test_web_app.test_add_to_watched_movies&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_web_app.test_login_required_to_remove_from_watchlist" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="COMPSCI235-ASSIGNMENT2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/e2e" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_web_app.test_login_required_to_remove_from_watchlist&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_web_app.test_remove_from_watchlist" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="COMPSCI235-ASSIGNMENT2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/e2e" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_web_app.test_remove_from_watchlist&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_web_app.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="COMPSCI235-ASSIGNMENT2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/e2e" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/e2e/test_web_app.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest" type="tests" factoryName="py.test" nameIsGenerated="true">
@@ -150,19 +148,19 @@
     </configuration>
     <list>
       <item itemvalue="Python tests.pytest" />
-      <item itemvalue="Python.wsgi" />
-      <item itemvalue="Python tests.pytest for test_web_app.test_browse_with_parameters" />
-      <item itemvalue="Python tests.pytest for test_web_app.test_browse_no_parameters" />
-      <item itemvalue="Python tests.pytest for test_memory_repository.test_repository_does_not_retrieve_an_review_when_there_are_no_reviews_for_query" />
-      <item itemvalue="Python tests.pytest for test_memory_repository.test_repository_retrieves_movies_on_a_search" />
+      <item itemvalue="Python tests.pytest for test_web_app.test_login_required_to_remove_from_watchlist" />
+      <item itemvalue="Python tests.pytest for test_web_app.test_remove_from_watchlist" />
+      <item itemvalue="Python tests.pytest for test_web_app.test_add_to_watch_list" />
+      <item itemvalue="Python tests.pytest for test_web_app.test_add_to_watched_movies" />
+      <item itemvalue="Python tests.pytest in test_web_app.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_memory_repository.test_repository_retrieves_movies_on_a_search" />
-        <item itemvalue="Python tests.pytest for test_memory_repository.test_repository_does_not_retrieve_an_review_when_there_are_no_reviews_for_query" />
-        <item itemvalue="Python tests.pytest for test_web_app.test_browse_with_parameters" />
-        <item itemvalue="Python tests.pytest for test_web_app.test_browse_no_parameters" />
-        <item itemvalue="Python.wsgi" />
+        <item itemvalue="Python tests.pytest in test_web_app.py" />
+        <item itemvalue="Python tests.pytest for test_web_app.test_add_to_watched_movies" />
+        <item itemvalue="Python tests.pytest for test_web_app.test_remove_from_watchlist" />
+        <item itemvalue="Python tests.pytest for test_web_app.test_add_to_watch_list" />
+        <item itemvalue="Python tests.pytest for test_web_app.test_login_required_to_remove_from_watchlist" />
       </list>
     </recent_temporary>
   </component>
@@ -209,33 +207,33 @@
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598450728763" />
     <state x="2660" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599371422536" />
     <state x="740" y="285" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603457274727" />
-    <state width="1899" height="255" key="GridCell.Tab.0.bottom" timestamp="1603469039518">
+    <state width="1899" height="255" key="GridCell.Tab.0.bottom" timestamp="1603540458776">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603469039518" />
+    <state width="1899" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603540458776" />
     <state width="1899" height="244" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
-    <state width="1899" height="255" key="GridCell.Tab.0.center" timestamp="1603469039518">
+    <state width="1899" height="255" key="GridCell.Tab.0.center" timestamp="1603540458776">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="255" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603469039518" />
+    <state width="1899" height="255" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603540458776" />
     <state width="1899" height="244" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
-    <state width="1899" height="255" key="GridCell.Tab.0.left" timestamp="1603469039518">
+    <state width="1899" height="255" key="GridCell.Tab.0.left" timestamp="1603540458776">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="255" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603469039518" />
+    <state width="1899" height="255" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603540458776" />
     <state width="1899" height="244" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
-    <state width="1899" height="255" key="GridCell.Tab.0.right" timestamp="1603469039518">
+    <state width="1899" height="255" key="GridCell.Tab.0.right" timestamp="1603540458776">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1882" height="294" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599207774722" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598421967717" />
-    <state width="1899" height="255" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603469039518" />
+    <state width="1899" height="255" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1603540458776" />
     <state width="1899" height="244" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602254514824" />
     <state width="1899" height="363" key="GridCell.Tab.1.bottom" timestamp="1603452344496">
       <screen x="0" y="0" width="1920" height="1080" />

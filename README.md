@@ -53,4 +53,8 @@ assigns TEST_DATA_PATH with the following value (the use of os.path.join and os.
 
 You can then run tests from within PyCharm.
 
+Another way of running it would be through shell again after the initial steps of the installation
+
+`$ python -m pytest`
+
  

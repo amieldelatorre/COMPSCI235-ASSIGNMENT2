@@ -56,6 +56,21 @@ def add_to_watchlist():
     return redirect(url_for('user_bp.watchlist'))
 
 
+@user_blueprint.route('/remove_from_watchlist', methods=['GET'])
+@login_required
+def remove_from_watchlist():
+    username = session['username']
+    try:
+        title = request.args.get('movie_name')
+        year = int(request.args.get('movie_year'))
+    except:
+        return redirect(url_for('home_bp.home'))
+    mov = repo.repo_instance.find_movie_by_title_and_year(title, year)
+    user = repo.repo_instance.get_user(username)
+    user.watchlist.remove_movie(mov)
+    print(user.watchlist.movies)
+    return redirect(url_for('user_bp.watchlist'))
+
 
 @user_blueprint.route('/watchlist', methods=['GET'])
 @login_required

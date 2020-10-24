@@ -26,7 +26,11 @@
       <p class="movie-page-description"><strong>Description:</strong> {{movie.description}}</p>
 
       <button class="btn-prev" onclick="location.href='{{watch_url}}'">Watch Movie</button>
+      {% if watchlist == None or movie not in watchlist.movies %}
       <button class="btn-prev" onclick="location.href='{{add_to_watchlist_url}}'">Add to Watch List</button>
+      {% elif movie in watchlist.movies %}
+      <button class="btn-prev" onclick="location.href='{{remove_from_watchlist_url}}'">Remove from Watch List</button>
+      {% endif %}
 
       </div>
     </div>

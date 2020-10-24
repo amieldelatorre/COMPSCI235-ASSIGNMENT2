@@ -163,6 +163,8 @@ def test_add_to_watched_movies(client, in_memory_repo, auth):
 
     response = client.get('/watch?movie_name=Guardians+of+the+Galaxy&movie_year=2014')
     assert response.headers['Location'] == 'http://localhost/movies_watched'
+    response = client.get('/movies_watched')
+    assert b'Amount of Movies Watched (including duplicates): </strong>1 movie(s)'
 
 
 def test_login_required_for_watchlist(client):
@@ -186,6 +188,8 @@ def test_add_to_watch_list(client, in_memory_repo, auth):
 
     response = client.get('/add_to_watchlist?movie_name=Guardians+of+the+Galaxy&movie_year=2014')
     assert response.headers['Location'] == 'http://localhost/watchlist'
+    response = client.get('/watchlist')
+    assert b'Amount of Movies in Watchlist: </strong>1 movie(s)' in response.data
 
 
 def test_login_required_to_access_profile(client):
@@ -199,3 +203,19 @@ def test_access_to_profile(client, auth):
 
     assert b'thorke' in response.data
     assert b'Amount of Movies Watched (including duplicates): </strong>0 movie(s)</p>\n ' in response.data
+
+
+def test_login_required_to_remove_from_watchlist(client):
+    response = client.get('/remove_from_watchlist?movie_name=Guardians+of+the+Galaxy&movie_year=2014')
+    assert response.headers['Location'] == 'http://localhost/authentication/login'
+
+
+def test_remove_from_watchlist(client, auth, in_memory_repo):
+    auth.login()
+    client.get('/add_to_watchlist?movie_name=Guardians+of+the+Galaxy&movie_year=2014')
+    response = client.get('/watchlist')
+    assert b'Amount of Movies in Watchlist: </strong>1 movie(s)' in response.data
+    client.get('/remove_from_watchlist?movie_name=Guardians+of+the+Galaxy&movie_year=2014')
+    response = client.get('/watchlist')
+    assert b'Amount of Movies in Watchlist: </strong>0 movie(s)' in response.data
+
