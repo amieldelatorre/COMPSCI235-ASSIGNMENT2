@@ -57,4 +57,11 @@ Another way of running it would be through shell again after the initial steps o
 
 `$ python -m pytest`
 
+
+## Caution
+
+Watch out for saved caches. There are times when caches are saved in the browser, however, the instance of flask has already been renewed and data put into the memory repository has already been lost. This could show errors. 
+
+Therefore, if you have just started flask and you are already logged in, please logout first to avoid errors and from there it is good to go. 
+
  
