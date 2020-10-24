@@ -146,17 +146,17 @@ def movies_watched():
     last_movie_url = None
 
     if cursor > 0:
-        prev_movie_url = url_for('user_bp.watchlist', cursor=cursor - movies_per_page)
-        first_movie_url = url_for('user_bp.watchlist')
+        prev_movie_url = url_for('user_bp.movies_watched', cursor=cursor - movies_per_page)
+        first_movie_url = url_for('user_bp.movies_watched')
 
     if cursor + movies_per_page < len(movies):
-        next_movie_url = url_for('user_bp.watchlist', cursor=cursor + movies_per_page)
+        next_movie_url = url_for('user_bp.movies_watched', cursor=cursor + movies_per_page)
 
         last_cursor = movies_per_page * int(len(movies) / movies_per_page)
         if len(movies) % movies_per_page == 0:
             last_cursor -= movies_per_page
 
-        last_movie_url = url_for('user_bp.watchlist', cursor=last_cursor)
+        last_movie_url = url_for('user_bp.movies_watched', cursor=last_cursor)
     for key in processed_movies.keys():
         processed_movies[key] = url_for('browse_bp.movie', movie_name=key.title, movie_year=key.year)
 
