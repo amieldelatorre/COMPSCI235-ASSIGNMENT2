@@ -182,9 +182,9 @@ img {
 
 .movie {
     margin: 50px;
-    width: 100%
+    width: 100%;
     height: auto;
-    displau: inline-block;
+    display: inline-block;
 }
 
 .movie .movie-page-title {
